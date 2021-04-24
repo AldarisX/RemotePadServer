@@ -4,147 +4,27 @@
 package cn.misakanet.proto;
 
 public final class Cmd {
-  private Cmd() {}
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
+  private Cmd() {
   }
 
   public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
+          com.google.protobuf.ExtensionRegistryLite registry) {
+  }
+
+  public static void registerAllExtensions(
+          com.google.protobuf.ExtensionRegistry registry) {
     registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
+            (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  /**
-   * Protobuf enum {@code common.CmdType}
-   */
-  public enum CmdType
-      implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     * <code>T_Hello = 0;</code>
-     */
-    T_Hello(0),
-    /**
-     * <code>T_Ping = 1;</code>
-     */
-    T_Ping(1),
-    /**
-     * <code>T_Pad_Type = 2;</code>
-     */
-    T_Pad_Type(2),
-    /**
-     * <code>T_Pad_Data = 3;</code>
-     */
-    T_Pad_Data(3),
-    UNRECOGNIZED(-1),
-    ;
 
-    /**
-     * <code>T_Hello = 0;</code>
-     */
-    public static final int T_Hello_VALUE = 0;
-    /**
-     * <code>T_Ping = 1;</code>
-     */
-    public static final int T_Ping_VALUE = 1;
-    /**
-     * <code>T_Pad_Type = 2;</code>
-     */
-    public static final int T_Pad_Type_VALUE = 2;
-    /**
-     * <code>T_Pad_Data = 3;</code>
-     */
-    public static final int T_Pad_Data_VALUE = 3;
-
-
-    public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
-      return value;
-    }
-
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
-    @java.lang.Deprecated
-    public static CmdType valueOf(int value) {
-      return forNumber(value);
-    }
-
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     */
-    public static CmdType forNumber(int value) {
-      switch (value) {
-        case 0: return T_Hello;
-        case 1: return T_Ping;
-        case 2: return T_Pad_Type;
-        case 3: return T_Pad_Data;
-        default: return null;
-      }
-    }
-
-    public static com.google.protobuf.Internal.EnumLiteMap<CmdType>
-        internalGetValueMap() {
-      return internalValueMap;
-    }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        CmdType> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<CmdType>() {
-            public CmdType findValueByNumber(int number) {
-              return CmdType.forNumber(number);
-            }
-          };
-
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
-            "Can't get the descriptor of an unrecognized enum value.");
-      }
-      return getDescriptor().getValues().get(ordinal());
-    }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
-      return getDescriptor();
-    }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return cn.misakanet.proto.Cmd.getDescriptor().getEnumTypes().get(0);
-    }
-
-    private static final CmdType[] VALUES = values();
-
-    public static CmdType valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
-      }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
-      return VALUES[desc.getIndex()];
-    }
-
-    private final int value;
-
-    private CmdType(int value) {
-      this.value = value;
-    }
-
-    // @@protoc_insertion_point(enum_scope:common.CmdType)
-  }
+  private static final com.google.protobuf.Descriptors.Descriptor
+          internal_static_common_Disconnect_descriptor;
 
   /**
    * Protobuf enum {@code common.MsgType}
    */
   public enum MsgType
-      implements com.google.protobuf.ProtocolMessageEnum {
+          implements com.google.protobuf.ProtocolMessageEnum {
     /**
      * <code>Server = 0;</code>
      */
@@ -653,1652 +533,71 @@ public final class Cmd {
     // @@protoc_insertion_point(enum_scope:common.PadBtn)
   }
 
-  public interface DataOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:common.Data)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>.common.CmdType cmd = 1;</code>
-     * @return The enum numeric value on the wire for cmd.
-     */
-    int getCmdValue();
-    /**
-     * <code>.common.CmdType cmd = 1;</code>
-     * @return The cmd.
-     */
-    cn.misakanet.proto.Cmd.CmdType getCmd();
-
-    /**
-     * <code>string id = 2;</code>
-     * @return The id.
-     */
-    java.lang.String getId();
-    /**
-     * <code>string id = 2;</code>
-     * @return The bytes for id.
-     */
-    com.google.protobuf.ByteString
-        getIdBytes();
-
-    /**
-     * <code>.common.MsgType msgType = 3;</code>
-     * @return The enum numeric value on the wire for msgType.
-     */
-    int getMsgTypeValue();
-    /**
-     * <code>.common.MsgType msgType = 3;</code>
-     * @return The msgType.
-     */
-    cn.misakanet.proto.Cmd.MsgType getMsgType();
-
-    /**
-     * <code>string to = 4;</code>
-     * @return The to.
-     */
-    java.lang.String getTo();
-    /**
-     * <code>string to = 4;</code>
-     * @return The bytes for to.
-     */
-    com.google.protobuf.ByteString
-        getToBytes();
-
-    /**
-     * <code>.common.Hello hello = 5;</code>
-     * @return Whether the hello field is set.
-     */
-    boolean hasHello();
-    /**
-     * <code>.common.Hello hello = 5;</code>
-     * @return The hello.
-     */
-    cn.misakanet.proto.Cmd.Hello getHello();
-    /**
-     * <code>.common.Hello hello = 5;</code>
-     */
-    cn.misakanet.proto.Cmd.HelloOrBuilder getHelloOrBuilder();
-
-    /**
-     * <code>.common.Ping ping = 6;</code>
-     * @return Whether the ping field is set.
-     */
-    boolean hasPing();
-    /**
-     * <code>.common.Ping ping = 6;</code>
-     * @return The ping.
-     */
-    cn.misakanet.proto.Cmd.Ping getPing();
-    /**
-     * <code>.common.Ping ping = 6;</code>
-     */
-    cn.misakanet.proto.Cmd.PingOrBuilder getPingOrBuilder();
-
-    /**
-     * <code>.common.PadType padType = 7;</code>
-     * @return The enum numeric value on the wire for padType.
-     */
-    int getPadTypeValue();
-    /**
-     * <code>.common.PadType padType = 7;</code>
-     * @return The padType.
-     */
-    cn.misakanet.proto.Cmd.PadType getPadType();
-
-    /**
-     * <code>.common.PadBtnData padData = 8;</code>
-     * @return Whether the padData field is set.
-     */
-    boolean hasPadData();
-    /**
-     * <code>.common.PadBtnData padData = 8;</code>
-     * @return The padData.
-     */
-    cn.misakanet.proto.Cmd.PadBtnData getPadData();
-    /**
-     * <code>.common.PadBtnData padData = 8;</code>
-     */
-    cn.misakanet.proto.Cmd.PadBtnDataOrBuilder getPadDataOrBuilder();
-  }
-  /**
-   * Protobuf type {@code common.Data}
-   */
-  public static final class Data extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:common.Data)
-      DataOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use Data.newBuilder() to construct.
-    private Data(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private Data() {
-      cmd_ = 0;
-      id_ = "";
-      msgType_ = 0;
-      to_ = "";
-      padType_ = 0;
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new Data();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private Data(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-              int rawValue = input.readEnum();
-
-              cmd_ = rawValue;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              id_ = s;
-              break;
-            }
-            case 24: {
-              int rawValue = input.readEnum();
-
-              msgType_ = rawValue;
-              break;
-            }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              to_ = s;
-              break;
-            }
-            case 42: {
-              cn.misakanet.proto.Cmd.Hello.Builder subBuilder = null;
-              if (hello_ != null) {
-                subBuilder = hello_.toBuilder();
-              }
-              hello_ = input.readMessage(cn.misakanet.proto.Cmd.Hello.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(hello_);
-                hello_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 50: {
-              cn.misakanet.proto.Cmd.Ping.Builder subBuilder = null;
-              if (ping_ != null) {
-                subBuilder = ping_.toBuilder();
-              }
-              ping_ = input.readMessage(cn.misakanet.proto.Cmd.Ping.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(ping_);
-                ping_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 56: {
-              int rawValue = input.readEnum();
-
-              padType_ = rawValue;
-              break;
-            }
-            case 66: {
-              cn.misakanet.proto.Cmd.PadBtnData.Builder subBuilder = null;
-              if (padData_ != null) {
-                subBuilder = padData_.toBuilder();
-              }
-              padData_ = input.readMessage(cn.misakanet.proto.Cmd.PadBtnData.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(padData_);
-                padData_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return cn.misakanet.proto.Cmd.internal_static_common_Data_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return cn.misakanet.proto.Cmd.internal_static_common_Data_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              cn.misakanet.proto.Cmd.Data.class, cn.misakanet.proto.Cmd.Data.Builder.class);
-    }
-
-    public static final int CMD_FIELD_NUMBER = 1;
-    private int cmd_;
-    /**
-     * <code>.common.CmdType cmd = 1;</code>
-     * @return The enum numeric value on the wire for cmd.
-     */
-    @java.lang.Override public int getCmdValue() {
-      return cmd_;
-    }
-    /**
-     * <code>.common.CmdType cmd = 1;</code>
-     * @return The cmd.
-     */
-    @java.lang.Override public cn.misakanet.proto.Cmd.CmdType getCmd() {
-      @SuppressWarnings("deprecation")
-      cn.misakanet.proto.Cmd.CmdType result = cn.misakanet.proto.Cmd.CmdType.valueOf(cmd_);
-      return result == null ? cn.misakanet.proto.Cmd.CmdType.UNRECOGNIZED : result;
-    }
-
-    public static final int ID_FIELD_NUMBER = 2;
-    private volatile java.lang.Object id_;
-    /**
-     * <code>string id = 2;</code>
-     * @return The id.
-     */
-    @java.lang.Override
-    public java.lang.String getId() {
-      java.lang.Object ref = id_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        id_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string id = 2;</code>
-     * @return The bytes for id.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getIdBytes() {
-      java.lang.Object ref = id_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        id_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int MSGTYPE_FIELD_NUMBER = 3;
-    private int msgType_;
-    /**
-     * <code>.common.MsgType msgType = 3;</code>
-     * @return The enum numeric value on the wire for msgType.
-     */
-    @java.lang.Override public int getMsgTypeValue() {
-      return msgType_;
-    }
-    /**
-     * <code>.common.MsgType msgType = 3;</code>
-     * @return The msgType.
-     */
-    @java.lang.Override public cn.misakanet.proto.Cmd.MsgType getMsgType() {
-      @SuppressWarnings("deprecation")
-      cn.misakanet.proto.Cmd.MsgType result = cn.misakanet.proto.Cmd.MsgType.valueOf(msgType_);
-      return result == null ? cn.misakanet.proto.Cmd.MsgType.UNRECOGNIZED : result;
-    }
-
-    public static final int TO_FIELD_NUMBER = 4;
-    private volatile java.lang.Object to_;
-    /**
-     * <code>string to = 4;</code>
-     * @return The to.
-     */
-    @java.lang.Override
-    public java.lang.String getTo() {
-      java.lang.Object ref = to_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        to_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string to = 4;</code>
-     * @return The bytes for to.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getToBytes() {
-      java.lang.Object ref = to_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        to_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int HELLO_FIELD_NUMBER = 5;
-    private cn.misakanet.proto.Cmd.Hello hello_;
-    /**
-     * <code>.common.Hello hello = 5;</code>
-     * @return Whether the hello field is set.
-     */
-    @java.lang.Override
-    public boolean hasHello() {
-      return hello_ != null;
-    }
-    /**
-     * <code>.common.Hello hello = 5;</code>
-     * @return The hello.
-     */
-    @java.lang.Override
-    public cn.misakanet.proto.Cmd.Hello getHello() {
-      return hello_ == null ? cn.misakanet.proto.Cmd.Hello.getDefaultInstance() : hello_;
-    }
-    /**
-     * <code>.common.Hello hello = 5;</code>
-     */
-    @java.lang.Override
-    public cn.misakanet.proto.Cmd.HelloOrBuilder getHelloOrBuilder() {
-      return getHello();
-    }
-
-    public static final int PING_FIELD_NUMBER = 6;
-    private cn.misakanet.proto.Cmd.Ping ping_;
-    /**
-     * <code>.common.Ping ping = 6;</code>
-     * @return Whether the ping field is set.
-     */
-    @java.lang.Override
-    public boolean hasPing() {
-      return ping_ != null;
-    }
-    /**
-     * <code>.common.Ping ping = 6;</code>
-     * @return The ping.
-     */
-    @java.lang.Override
-    public cn.misakanet.proto.Cmd.Ping getPing() {
-      return ping_ == null ? cn.misakanet.proto.Cmd.Ping.getDefaultInstance() : ping_;
-    }
-    /**
-     * <code>.common.Ping ping = 6;</code>
-     */
-    @java.lang.Override
-    public cn.misakanet.proto.Cmd.PingOrBuilder getPingOrBuilder() {
-      return getPing();
-    }
-
-    public static final int PADTYPE_FIELD_NUMBER = 7;
-    private int padType_;
-    /**
-     * <code>.common.PadType padType = 7;</code>
-     * @return The enum numeric value on the wire for padType.
-     */
-    @java.lang.Override public int getPadTypeValue() {
-      return padType_;
-    }
-    /**
-     * <code>.common.PadType padType = 7;</code>
-     * @return The padType.
-     */
-    @java.lang.Override public cn.misakanet.proto.Cmd.PadType getPadType() {
-      @SuppressWarnings("deprecation")
-      cn.misakanet.proto.Cmd.PadType result = cn.misakanet.proto.Cmd.PadType.valueOf(padType_);
-      return result == null ? cn.misakanet.proto.Cmd.PadType.UNRECOGNIZED : result;
-    }
-
-    public static final int PADDATA_FIELD_NUMBER = 8;
-    private cn.misakanet.proto.Cmd.PadBtnData padData_;
-    /**
-     * <code>.common.PadBtnData padData = 8;</code>
-     * @return Whether the padData field is set.
-     */
-    @java.lang.Override
-    public boolean hasPadData() {
-      return padData_ != null;
-    }
-    /**
-     * <code>.common.PadBtnData padData = 8;</code>
-     * @return The padData.
-     */
-    @java.lang.Override
-    public cn.misakanet.proto.Cmd.PadBtnData getPadData() {
-      return padData_ == null ? cn.misakanet.proto.Cmd.PadBtnData.getDefaultInstance() : padData_;
-    }
-    /**
-     * <code>.common.PadBtnData padData = 8;</code>
-     */
-    @java.lang.Override
-    public cn.misakanet.proto.Cmd.PadBtnDataOrBuilder getPadDataOrBuilder() {
-      return getPadData();
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (cmd_ != cn.misakanet.proto.Cmd.CmdType.T_Hello.getNumber()) {
-        output.writeEnum(1, cmd_);
-      }
-      if (!getIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, id_);
-      }
-      if (msgType_ != cn.misakanet.proto.Cmd.MsgType.Server.getNumber()) {
-        output.writeEnum(3, msgType_);
-      }
-      if (!getToBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, to_);
-      }
-      if (hello_ != null) {
-        output.writeMessage(5, getHello());
-      }
-      if (ping_ != null) {
-        output.writeMessage(6, getPing());
-      }
-      if (padType_ != cn.misakanet.proto.Cmd.PadType.DS4.getNumber()) {
-        output.writeEnum(7, padType_);
-      }
-      if (padData_ != null) {
-        output.writeMessage(8, getPadData());
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (cmd_ != cn.misakanet.proto.Cmd.CmdType.T_Hello.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(1, cmd_);
-      }
-      if (!getIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, id_);
-      }
-      if (msgType_ != cn.misakanet.proto.Cmd.MsgType.Server.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(3, msgType_);
-      }
-      if (!getToBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, to_);
-      }
-      if (hello_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, getHello());
-      }
-      if (ping_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, getPing());
-      }
-      if (padType_ != cn.misakanet.proto.Cmd.PadType.DS4.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(7, padType_);
-      }
-      if (padData_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, getPadData());
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof cn.misakanet.proto.Cmd.Data)) {
-        return super.equals(obj);
-      }
-      cn.misakanet.proto.Cmd.Data other = (cn.misakanet.proto.Cmd.Data) obj;
-
-      if (cmd_ != other.cmd_) return false;
-      if (!getId()
-          .equals(other.getId())) return false;
-      if (msgType_ != other.msgType_) return false;
-      if (!getTo()
-          .equals(other.getTo())) return false;
-      if (hasHello() != other.hasHello()) return false;
-      if (hasHello()) {
-        if (!getHello()
-            .equals(other.getHello())) return false;
-      }
-      if (hasPing() != other.hasPing()) return false;
-      if (hasPing()) {
-        if (!getPing()
-            .equals(other.getPing())) return false;
-      }
-      if (padType_ != other.padType_) return false;
-      if (hasPadData() != other.hasPadData()) return false;
-      if (hasPadData()) {
-        if (!getPadData()
-            .equals(other.getPadData())) return false;
-      }
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + CMD_FIELD_NUMBER;
-      hash = (53 * hash) + cmd_;
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId().hashCode();
-      hash = (37 * hash) + MSGTYPE_FIELD_NUMBER;
-      hash = (53 * hash) + msgType_;
-      hash = (37 * hash) + TO_FIELD_NUMBER;
-      hash = (53 * hash) + getTo().hashCode();
-      if (hasHello()) {
-        hash = (37 * hash) + HELLO_FIELD_NUMBER;
-        hash = (53 * hash) + getHello().hashCode();
-      }
-      if (hasPing()) {
-        hash = (37 * hash) + PING_FIELD_NUMBER;
-        hash = (53 * hash) + getPing().hashCode();
-      }
-      hash = (37 * hash) + PADTYPE_FIELD_NUMBER;
-      hash = (53 * hash) + padType_;
-      if (hasPadData()) {
-        hash = (37 * hash) + PADDATA_FIELD_NUMBER;
-        hash = (53 * hash) + getPadData().hashCode();
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static cn.misakanet.proto.Cmd.Data parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static cn.misakanet.proto.Cmd.Data parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static cn.misakanet.proto.Cmd.Data parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static cn.misakanet.proto.Cmd.Data parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static cn.misakanet.proto.Cmd.Data parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static cn.misakanet.proto.Cmd.Data parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static cn.misakanet.proto.Cmd.Data parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static cn.misakanet.proto.Cmd.Data parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static cn.misakanet.proto.Cmd.Data parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static cn.misakanet.proto.Cmd.Data parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static cn.misakanet.proto.Cmd.Data parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static cn.misakanet.proto.Cmd.Data parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(cn.misakanet.proto.Cmd.Data prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code common.Data}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:common.Data)
-        cn.misakanet.proto.Cmd.DataOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return cn.misakanet.proto.Cmd.internal_static_common_Data_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return cn.misakanet.proto.Cmd.internal_static_common_Data_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                cn.misakanet.proto.Cmd.Data.class, cn.misakanet.proto.Cmd.Data.Builder.class);
-      }
-
-      // Construct using cn.misakanet.proto.Cmd.Data.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        cmd_ = 0;
-
-        id_ = "";
-
-        msgType_ = 0;
-
-        to_ = "";
-
-        if (helloBuilder_ == null) {
-          hello_ = null;
-        } else {
-          hello_ = null;
-          helloBuilder_ = null;
-        }
-        if (pingBuilder_ == null) {
-          ping_ = null;
-        } else {
-          ping_ = null;
-          pingBuilder_ = null;
-        }
-        padType_ = 0;
-
-        if (padDataBuilder_ == null) {
-          padData_ = null;
-        } else {
-          padData_ = null;
-          padDataBuilder_ = null;
-        }
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return cn.misakanet.proto.Cmd.internal_static_common_Data_descriptor;
-      }
-
-      @java.lang.Override
-      public cn.misakanet.proto.Cmd.Data getDefaultInstanceForType() {
-        return cn.misakanet.proto.Cmd.Data.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public cn.misakanet.proto.Cmd.Data build() {
-        cn.misakanet.proto.Cmd.Data result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public cn.misakanet.proto.Cmd.Data buildPartial() {
-        cn.misakanet.proto.Cmd.Data result = new cn.misakanet.proto.Cmd.Data(this);
-        result.cmd_ = cmd_;
-        result.id_ = id_;
-        result.msgType_ = msgType_;
-        result.to_ = to_;
-        if (helloBuilder_ == null) {
-          result.hello_ = hello_;
-        } else {
-          result.hello_ = helloBuilder_.build();
-        }
-        if (pingBuilder_ == null) {
-          result.ping_ = ping_;
-        } else {
-          result.ping_ = pingBuilder_.build();
-        }
-        result.padType_ = padType_;
-        if (padDataBuilder_ == null) {
-          result.padData_ = padData_;
-        } else {
-          result.padData_ = padDataBuilder_.build();
-        }
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof cn.misakanet.proto.Cmd.Data) {
-          return mergeFrom((cn.misakanet.proto.Cmd.Data)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(cn.misakanet.proto.Cmd.Data other) {
-        if (other == cn.misakanet.proto.Cmd.Data.getDefaultInstance()) return this;
-        if (other.cmd_ != 0) {
-          setCmdValue(other.getCmdValue());
-        }
-        if (!other.getId().isEmpty()) {
-          id_ = other.id_;
-          onChanged();
-        }
-        if (other.msgType_ != 0) {
-          setMsgTypeValue(other.getMsgTypeValue());
-        }
-        if (!other.getTo().isEmpty()) {
-          to_ = other.to_;
-          onChanged();
-        }
-        if (other.hasHello()) {
-          mergeHello(other.getHello());
-        }
-        if (other.hasPing()) {
-          mergePing(other.getPing());
-        }
-        if (other.padType_ != 0) {
-          setPadTypeValue(other.getPadTypeValue());
-        }
-        if (other.hasPadData()) {
-          mergePadData(other.getPadData());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        cn.misakanet.proto.Cmd.Data parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (cn.misakanet.proto.Cmd.Data) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private int cmd_ = 0;
-      /**
-       * <code>.common.CmdType cmd = 1;</code>
-       * @return The enum numeric value on the wire for cmd.
-       */
-      @java.lang.Override public int getCmdValue() {
-        return cmd_;
-      }
-      /**
-       * <code>.common.CmdType cmd = 1;</code>
-       * @param value The enum numeric value on the wire for cmd to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCmdValue(int value) {
-        
-        cmd_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.common.CmdType cmd = 1;</code>
-       * @return The cmd.
-       */
-      @java.lang.Override
-      public cn.misakanet.proto.Cmd.CmdType getCmd() {
-        @SuppressWarnings("deprecation")
-        cn.misakanet.proto.Cmd.CmdType result = cn.misakanet.proto.Cmd.CmdType.valueOf(cmd_);
-        return result == null ? cn.misakanet.proto.Cmd.CmdType.UNRECOGNIZED : result;
-      }
-      /**
-       * <code>.common.CmdType cmd = 1;</code>
-       * @param value The cmd to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCmd(cn.misakanet.proto.Cmd.CmdType value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        cmd_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.common.CmdType cmd = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCmd() {
-        
-        cmd_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object id_ = "";
-      /**
-       * <code>string id = 2;</code>
-       * @return The id.
-       */
-      public java.lang.String getId() {
-        java.lang.Object ref = id_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          id_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string id = 2;</code>
-       * @return The bytes for id.
-       */
-      public com.google.protobuf.ByteString
-          getIdBytes() {
-        java.lang.Object ref = id_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          id_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string id = 2;</code>
-       * @param value The id to set.
-       * @return This builder for chaining.
-       */
-      public Builder setId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        id_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string id = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearId() {
-        
-        id_ = getDefaultInstance().getId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string id = 2;</code>
-       * @param value The bytes for id to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        id_ = value;
-        onChanged();
-        return this;
-      }
-
-      private int msgType_ = 0;
-      /**
-       * <code>.common.MsgType msgType = 3;</code>
-       * @return The enum numeric value on the wire for msgType.
-       */
-      @java.lang.Override public int getMsgTypeValue() {
-        return msgType_;
-      }
-      /**
-       * <code>.common.MsgType msgType = 3;</code>
-       * @param value The enum numeric value on the wire for msgType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMsgTypeValue(int value) {
-        
-        msgType_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.common.MsgType msgType = 3;</code>
-       * @return The msgType.
-       */
-      @java.lang.Override
-      public cn.misakanet.proto.Cmd.MsgType getMsgType() {
-        @SuppressWarnings("deprecation")
-        cn.misakanet.proto.Cmd.MsgType result = cn.misakanet.proto.Cmd.MsgType.valueOf(msgType_);
-        return result == null ? cn.misakanet.proto.Cmd.MsgType.UNRECOGNIZED : result;
-      }
-      /**
-       * <code>.common.MsgType msgType = 3;</code>
-       * @param value The msgType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMsgType(cn.misakanet.proto.Cmd.MsgType value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        msgType_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.common.MsgType msgType = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMsgType() {
-        
-        msgType_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object to_ = "";
-      /**
-       * <code>string to = 4;</code>
-       * @return The to.
-       */
-      public java.lang.String getTo() {
-        java.lang.Object ref = to_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          to_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string to = 4;</code>
-       * @return The bytes for to.
-       */
-      public com.google.protobuf.ByteString
-          getToBytes() {
-        java.lang.Object ref = to_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          to_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string to = 4;</code>
-       * @param value The to to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTo(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        to_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string to = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTo() {
-        
-        to_ = getDefaultInstance().getTo();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string to = 4;</code>
-       * @param value The bytes for to to set.
-       * @return This builder for chaining.
-       */
-      public Builder setToBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        to_ = value;
-        onChanged();
-        return this;
-      }
-
-      private cn.misakanet.proto.Cmd.Hello hello_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          cn.misakanet.proto.Cmd.Hello, cn.misakanet.proto.Cmd.Hello.Builder, cn.misakanet.proto.Cmd.HelloOrBuilder> helloBuilder_;
-      /**
-       * <code>.common.Hello hello = 5;</code>
-       * @return Whether the hello field is set.
-       */
-      public boolean hasHello() {
-        return helloBuilder_ != null || hello_ != null;
-      }
-      /**
-       * <code>.common.Hello hello = 5;</code>
-       * @return The hello.
-       */
-      public cn.misakanet.proto.Cmd.Hello getHello() {
-        if (helloBuilder_ == null) {
-          return hello_ == null ? cn.misakanet.proto.Cmd.Hello.getDefaultInstance() : hello_;
-        } else {
-          return helloBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.common.Hello hello = 5;</code>
-       */
-      public Builder setHello(cn.misakanet.proto.Cmd.Hello value) {
-        if (helloBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          hello_ = value;
-          onChanged();
-        } else {
-          helloBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.common.Hello hello = 5;</code>
-       */
-      public Builder setHello(
-          cn.misakanet.proto.Cmd.Hello.Builder builderForValue) {
-        if (helloBuilder_ == null) {
-          hello_ = builderForValue.build();
-          onChanged();
-        } else {
-          helloBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.common.Hello hello = 5;</code>
-       */
-      public Builder mergeHello(cn.misakanet.proto.Cmd.Hello value) {
-        if (helloBuilder_ == null) {
-          if (hello_ != null) {
-            hello_ =
-              cn.misakanet.proto.Cmd.Hello.newBuilder(hello_).mergeFrom(value).buildPartial();
-          } else {
-            hello_ = value;
-          }
-          onChanged();
-        } else {
-          helloBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.common.Hello hello = 5;</code>
-       */
-      public Builder clearHello() {
-        if (helloBuilder_ == null) {
-          hello_ = null;
-          onChanged();
-        } else {
-          hello_ = null;
-          helloBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.common.Hello hello = 5;</code>
-       */
-      public cn.misakanet.proto.Cmd.Hello.Builder getHelloBuilder() {
-        
-        onChanged();
-        return getHelloFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.common.Hello hello = 5;</code>
-       */
-      public cn.misakanet.proto.Cmd.HelloOrBuilder getHelloOrBuilder() {
-        if (helloBuilder_ != null) {
-          return helloBuilder_.getMessageOrBuilder();
-        } else {
-          return hello_ == null ?
-              cn.misakanet.proto.Cmd.Hello.getDefaultInstance() : hello_;
-        }
-      }
-      /**
-       * <code>.common.Hello hello = 5;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          cn.misakanet.proto.Cmd.Hello, cn.misakanet.proto.Cmd.Hello.Builder, cn.misakanet.proto.Cmd.HelloOrBuilder> 
-          getHelloFieldBuilder() {
-        if (helloBuilder_ == null) {
-          helloBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              cn.misakanet.proto.Cmd.Hello, cn.misakanet.proto.Cmd.Hello.Builder, cn.misakanet.proto.Cmd.HelloOrBuilder>(
-                  getHello(),
-                  getParentForChildren(),
-                  isClean());
-          hello_ = null;
-        }
-        return helloBuilder_;
-      }
-
-      private cn.misakanet.proto.Cmd.Ping ping_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          cn.misakanet.proto.Cmd.Ping, cn.misakanet.proto.Cmd.Ping.Builder, cn.misakanet.proto.Cmd.PingOrBuilder> pingBuilder_;
-      /**
-       * <code>.common.Ping ping = 6;</code>
-       * @return Whether the ping field is set.
-       */
-      public boolean hasPing() {
-        return pingBuilder_ != null || ping_ != null;
-      }
-      /**
-       * <code>.common.Ping ping = 6;</code>
-       * @return The ping.
-       */
-      public cn.misakanet.proto.Cmd.Ping getPing() {
-        if (pingBuilder_ == null) {
-          return ping_ == null ? cn.misakanet.proto.Cmd.Ping.getDefaultInstance() : ping_;
-        } else {
-          return pingBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.common.Ping ping = 6;</code>
-       */
-      public Builder setPing(cn.misakanet.proto.Cmd.Ping value) {
-        if (pingBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ping_ = value;
-          onChanged();
-        } else {
-          pingBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.common.Ping ping = 6;</code>
-       */
-      public Builder setPing(
-          cn.misakanet.proto.Cmd.Ping.Builder builderForValue) {
-        if (pingBuilder_ == null) {
-          ping_ = builderForValue.build();
-          onChanged();
-        } else {
-          pingBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.common.Ping ping = 6;</code>
-       */
-      public Builder mergePing(cn.misakanet.proto.Cmd.Ping value) {
-        if (pingBuilder_ == null) {
-          if (ping_ != null) {
-            ping_ =
-              cn.misakanet.proto.Cmd.Ping.newBuilder(ping_).mergeFrom(value).buildPartial();
-          } else {
-            ping_ = value;
-          }
-          onChanged();
-        } else {
-          pingBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.common.Ping ping = 6;</code>
-       */
-      public Builder clearPing() {
-        if (pingBuilder_ == null) {
-          ping_ = null;
-          onChanged();
-        } else {
-          ping_ = null;
-          pingBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.common.Ping ping = 6;</code>
-       */
-      public cn.misakanet.proto.Cmd.Ping.Builder getPingBuilder() {
-        
-        onChanged();
-        return getPingFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.common.Ping ping = 6;</code>
-       */
-      public cn.misakanet.proto.Cmd.PingOrBuilder getPingOrBuilder() {
-        if (pingBuilder_ != null) {
-          return pingBuilder_.getMessageOrBuilder();
-        } else {
-          return ping_ == null ?
-              cn.misakanet.proto.Cmd.Ping.getDefaultInstance() : ping_;
-        }
-      }
-      /**
-       * <code>.common.Ping ping = 6;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          cn.misakanet.proto.Cmd.Ping, cn.misakanet.proto.Cmd.Ping.Builder, cn.misakanet.proto.Cmd.PingOrBuilder> 
-          getPingFieldBuilder() {
-        if (pingBuilder_ == null) {
-          pingBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              cn.misakanet.proto.Cmd.Ping, cn.misakanet.proto.Cmd.Ping.Builder, cn.misakanet.proto.Cmd.PingOrBuilder>(
-                  getPing(),
-                  getParentForChildren(),
-                  isClean());
-          ping_ = null;
-        }
-        return pingBuilder_;
-      }
-
-      private int padType_ = 0;
-      /**
-       * <code>.common.PadType padType = 7;</code>
-       * @return The enum numeric value on the wire for padType.
-       */
-      @java.lang.Override public int getPadTypeValue() {
-        return padType_;
-      }
-      /**
-       * <code>.common.PadType padType = 7;</code>
-       * @param value The enum numeric value on the wire for padType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPadTypeValue(int value) {
-        
-        padType_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.common.PadType padType = 7;</code>
-       * @return The padType.
-       */
-      @java.lang.Override
-      public cn.misakanet.proto.Cmd.PadType getPadType() {
-        @SuppressWarnings("deprecation")
-        cn.misakanet.proto.Cmd.PadType result = cn.misakanet.proto.Cmd.PadType.valueOf(padType_);
-        return result == null ? cn.misakanet.proto.Cmd.PadType.UNRECOGNIZED : result;
-      }
-      /**
-       * <code>.common.PadType padType = 7;</code>
-       * @param value The padType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPadType(cn.misakanet.proto.Cmd.PadType value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        padType_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.common.PadType padType = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPadType() {
-        
-        padType_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private cn.misakanet.proto.Cmd.PadBtnData padData_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          cn.misakanet.proto.Cmd.PadBtnData, cn.misakanet.proto.Cmd.PadBtnData.Builder, cn.misakanet.proto.Cmd.PadBtnDataOrBuilder> padDataBuilder_;
-      /**
-       * <code>.common.PadBtnData padData = 8;</code>
-       * @return Whether the padData field is set.
-       */
-      public boolean hasPadData() {
-        return padDataBuilder_ != null || padData_ != null;
-      }
-      /**
-       * <code>.common.PadBtnData padData = 8;</code>
-       * @return The padData.
-       */
-      public cn.misakanet.proto.Cmd.PadBtnData getPadData() {
-        if (padDataBuilder_ == null) {
-          return padData_ == null ? cn.misakanet.proto.Cmd.PadBtnData.getDefaultInstance() : padData_;
-        } else {
-          return padDataBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.common.PadBtnData padData = 8;</code>
-       */
-      public Builder setPadData(cn.misakanet.proto.Cmd.PadBtnData value) {
-        if (padDataBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          padData_ = value;
-          onChanged();
-        } else {
-          padDataBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.common.PadBtnData padData = 8;</code>
-       */
-      public Builder setPadData(
-          cn.misakanet.proto.Cmd.PadBtnData.Builder builderForValue) {
-        if (padDataBuilder_ == null) {
-          padData_ = builderForValue.build();
-          onChanged();
-        } else {
-          padDataBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.common.PadBtnData padData = 8;</code>
-       */
-      public Builder mergePadData(cn.misakanet.proto.Cmd.PadBtnData value) {
-        if (padDataBuilder_ == null) {
-          if (padData_ != null) {
-            padData_ =
-              cn.misakanet.proto.Cmd.PadBtnData.newBuilder(padData_).mergeFrom(value).buildPartial();
-          } else {
-            padData_ = value;
-          }
-          onChanged();
-        } else {
-          padDataBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.common.PadBtnData padData = 8;</code>
-       */
-      public Builder clearPadData() {
-        if (padDataBuilder_ == null) {
-          padData_ = null;
-          onChanged();
-        } else {
-          padData_ = null;
-          padDataBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.common.PadBtnData padData = 8;</code>
-       */
-      public cn.misakanet.proto.Cmd.PadBtnData.Builder getPadDataBuilder() {
-        
-        onChanged();
-        return getPadDataFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.common.PadBtnData padData = 8;</code>
-       */
-      public cn.misakanet.proto.Cmd.PadBtnDataOrBuilder getPadDataOrBuilder() {
-        if (padDataBuilder_ != null) {
-          return padDataBuilder_.getMessageOrBuilder();
-        } else {
-          return padData_ == null ?
-              cn.misakanet.proto.Cmd.PadBtnData.getDefaultInstance() : padData_;
-        }
-      }
-      /**
-       * <code>.common.PadBtnData padData = 8;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          cn.misakanet.proto.Cmd.PadBtnData, cn.misakanet.proto.Cmd.PadBtnData.Builder, cn.misakanet.proto.Cmd.PadBtnDataOrBuilder> 
-          getPadDataFieldBuilder() {
-        if (padDataBuilder_ == null) {
-          padDataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              cn.misakanet.proto.Cmd.PadBtnData, cn.misakanet.proto.Cmd.PadBtnData.Builder, cn.misakanet.proto.Cmd.PadBtnDataOrBuilder>(
-                  getPadData(),
-                  getParentForChildren(),
-                  isClean());
-          padData_ = null;
-        }
-        return padDataBuilder_;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:common.Data)
-    }
-
-    // @@protoc_insertion_point(class_scope:common.Data)
-    private static final cn.misakanet.proto.Cmd.Data DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new cn.misakanet.proto.Cmd.Data();
-    }
-
-    public static cn.misakanet.proto.Cmd.Data getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<Data>
-        PARSER = new com.google.protobuf.AbstractParser<Data>() {
-      @java.lang.Override
-      public Data parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Data(input, extensionRegistry);
-      }
+  private static final
+  com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internal_static_common_Disconnect_fieldAccessorTable;
+
+  static {
+    java.lang.String[] descriptorData = {
+            "\n\017proto/cmd.proto\022\006common\"\207\002\n\004Data\022\034\n\003cm" +
+                    "d\030\001 \001(\0162\017.common.CmdType\022\n\n\002id\030\002 \001(\t\022 \n\007" +
+                    "msgType\030\003 \001(\0162\017.common.MsgType\022\n\n\002to\030\004 \001" +
+                    "(\t\022\034\n\005hello\030\005 \001(\0132\r.common.Hello\022\032\n\004ping" +
+                    "\030\006 \001(\0132\014.common.Ping\022 \n\007padType\030\007 \001(\0162\017." +
+                    "common.PadType\022#\n\007padData\030\010 \001(\0132\022.common" +
+                    ".PadBtnData\022&\n\ndisconnect\030\t \001(\0132\022.common" +
+                    ".Disconnect\"_\n\005Hello\022\r\n\005group\030\001 \001(\t\022\n\n\002i" +
+                    "d\030\002 \001(\t\022\014\n\004name\030\003 \001(\t\022\013\n\003msg\030\004 \001(\t\022\021\n\tse" +
+                    "rverMsg\030\005 \001(\t\022\r\n\005order\030\006 \001(\010\"\024\n\004Ping\022\014\n\004" +
+                    "time\030\001 \001(\003\"=\n\nPadBtnData\022\037\n\007btnType\030\001 \001(" +
+                    "\0162\016.common.PadBtn\022\016\n\006btnVal\030\002 \001(\005\"\030\n\nDis" +
+                    "connect\022\n\n\002id\030\001 \001(\t*T\n\007CmdType\022\013\n\007T_Hell" +
+                    "o\020\000\022\n\n\006T_Ping\020\001\022\016\n\nT_Pad_Type\020\002\022\016\n\nT_Pad" +
+                    "_Data\020\003\022\020\n\014T_DISCONNECT\020\004**\n\007MsgType\022\n\n\006" +
+                    "Server\020\000\022\n\n\006Driver\020\001\022\007\n\003Pad\020\002*\037\n\007PadType" +
+                    "\022\007\n\003DS4\020\000\022\013\n\007Xbox360\020\001*\325\001\n\006PadBtn\022\005\n\001A\020\000" +
+                    "\022\005\n\001B\020\001\022\005\n\001Y\020\002\022\005\n\001X\020\003\022\006\n\002LB\020\004\022\006\n\002RB\020\005\022\006\n" +
+                    "\002L3\020\006\022\006\n\002R3\020\007\022\t\n\005Start\020\010\022\n\n\006Select\020\t\022\010\n\004" +
+                    "Xbox\020\n\022\006\n\002L2\020\013\022\006\n\002R2\020\014\022\007\n\003LAX\020\r\022\007\n\003LAY\020\016" +
+                    "\022\007\n\003RAX\020\017\022\007\n\003RAY\020\020\022\007\n\003DUP\020\021\022\t\n\005DDOWN\020\022\022\t" +
+                    "\n\005DLEFT\020\023\022\n\n\006DRIGHT\020\024\022\017\n\013DS4TouchPad\020\025B/" +
+                    "\n\022cn.misakanet.protoZ\007common/\252\002\017RemotePa" +
+                    "dDriverb\006proto3"
     };
-
-    public static com.google.protobuf.Parser<Data> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<Data> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public cn.misakanet.proto.Cmd.Data getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+            .internalBuildGeneratedFileFrom(descriptorData,
+                    new com.google.protobuf.Descriptors.FileDescriptor[]{
+                    });
+    internal_static_common_Data_descriptor =
+            getDescriptor().getMessageTypes().get(0);
+    internal_static_common_Data_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_common_Data_descriptor,
+            new java.lang.String[]{"Cmd", "Id", "MsgType", "To", "Hello", "Ping", "PadType", "PadData", "Disconnect",});
+    internal_static_common_Hello_descriptor =
+            getDescriptor().getMessageTypes().get(1);
+    internal_static_common_Hello_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_common_Hello_descriptor,
+            new java.lang.String[]{"Group", "Id", "Name", "Msg", "ServerMsg", "Order",});
+    internal_static_common_Ping_descriptor =
+            getDescriptor().getMessageTypes().get(2);
+    internal_static_common_Ping_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_common_Ping_descriptor,
+            new java.lang.String[]{"Time",});
+    internal_static_common_PadBtnData_descriptor =
+            getDescriptor().getMessageTypes().get(3);
+    internal_static_common_PadBtnData_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_common_PadBtnData_descriptor,
+            new java.lang.String[]{"BtnType", "BtnVal",});
+    internal_static_common_Disconnect_descriptor =
+            getDescriptor().getMessageTypes().get(4);
+    internal_static_common_Disconnect_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_common_Disconnect_descriptor,
+            new java.lang.String[]{"Id",});
   }
 
   public interface HelloOrBuilder extends
@@ -4030,14 +2329,15 @@ public final class Cmd {
   }
 
   public interface PadBtnDataOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:common.PadBtnData)
-      com.google.protobuf.MessageOrBuilder {
+          // @@protoc_insertion_point(interface_extends:common.PadBtnData)
+          com.google.protobuf.MessageOrBuilder {
 
     /**
      * <code>.common.PadBtn btnType = 1;</code>
      * @return The enum numeric value on the wire for btnType.
      */
     int getBtnTypeValue();
+
     /**
      * <code>.common.PadBtn btnType = 1;</code>
      * @return The btnType.
@@ -4046,18 +2346,2266 @@ public final class Cmd {
 
     /**
      * <code>int32 btnVal = 2;</code>
+     *
      * @return The btnVal.
      */
     int getBtnVal();
   }
+
+  /**
+   * Protobuf enum {@code common.CmdType}
+   */
+  public enum CmdType
+          implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>T_Hello = 0;</code>
+     */
+    T_Hello(0),
+    /**
+     * <code>T_Ping = 1;</code>
+     */
+    T_Ping(1),
+    /**
+     * <code>T_Pad_Type = 2;</code>
+     */
+    T_Pad_Type(2),
+    /**
+     * <code>T_Pad_Data = 3;</code>
+     */
+    T_Pad_Data(3),
+    /**
+     * <code>T_DISCONNECT = 4;</code>
+     */
+    T_DISCONNECT(4),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>T_Hello = 0;</code>
+     */
+    public static final int T_Hello_VALUE = 0;
+    /**
+     * <code>T_Ping = 1;</code>
+     */
+    public static final int T_Ping_VALUE = 1;
+    /**
+     * <code>T_Pad_Type = 2;</code>
+     */
+    public static final int T_Pad_Type_VALUE = 2;
+    /**
+     * <code>T_Pad_Data = 3;</code>
+     */
+    public static final int T_Pad_Data_VALUE = 3;
+    /**
+     * <code>T_DISCONNECT = 4;</code>
+     */
+    public static final int T_DISCONNECT_VALUE = 4;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+                "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static CmdType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static CmdType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return T_Hello;
+        case 1:
+          return T_Ping;
+        case 2:
+          return T_Pad_Type;
+        case 3:
+          return T_Pad_Data;
+        case 4:
+          return T_DISCONNECT;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<CmdType>
+    internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+            CmdType> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<CmdType>() {
+              public CmdType findValueByNumber(int number) {
+                return CmdType.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+    getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+                "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+    getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+    getDescriptor() {
+      return cn.misakanet.proto.Cmd.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final CmdType[] VALUES = values();
+
+    public static CmdType valueOf(
+            com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+                "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private CmdType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:common.CmdType)
+  }
+
+  public interface DataOrBuilder extends
+          // @@protoc_insertion_point(interface_extends:common.Data)
+          com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.common.CmdType cmd = 1;</code>
+     *
+     * @return The enum numeric value on the wire for cmd.
+     */
+    int getCmdValue();
+
+    /**
+     * <code>.common.CmdType cmd = 1;</code>
+     *
+     * @return The cmd.
+     */
+    cn.misakanet.proto.Cmd.CmdType getCmd();
+
+    /**
+     * <code>string id = 2;</code>
+     *
+     * @return The id.
+     */
+    java.lang.String getId();
+
+    /**
+     * <code>string id = 2;</code>
+     *
+     * @return The bytes for id.
+     */
+    com.google.protobuf.ByteString
+    getIdBytes();
+
+    /**
+     * <code>.common.MsgType msgType = 3;</code>
+     *
+     * @return The enum numeric value on the wire for msgType.
+     */
+    int getMsgTypeValue();
+
+    /**
+     * <code>.common.MsgType msgType = 3;</code>
+     *
+     * @return The msgType.
+     */
+    cn.misakanet.proto.Cmd.MsgType getMsgType();
+
+    /**
+     * <code>string to = 4;</code>
+     *
+     * @return The to.
+     */
+    java.lang.String getTo();
+
+    /**
+     * <code>string to = 4;</code>
+     *
+     * @return The bytes for to.
+     */
+    com.google.protobuf.ByteString
+    getToBytes();
+
+    /**
+     * <code>.common.Hello hello = 5;</code>
+     *
+     * @return Whether the hello field is set.
+     */
+    boolean hasHello();
+
+    /**
+     * <code>.common.Hello hello = 5;</code>
+     *
+     * @return The hello.
+     */
+    cn.misakanet.proto.Cmd.Hello getHello();
+
+    /**
+     * <code>.common.Hello hello = 5;</code>
+     */
+    cn.misakanet.proto.Cmd.HelloOrBuilder getHelloOrBuilder();
+
+    /**
+     * <code>.common.Ping ping = 6;</code>
+     *
+     * @return Whether the ping field is set.
+     */
+    boolean hasPing();
+
+    /**
+     * <code>.common.Ping ping = 6;</code>
+     *
+     * @return The ping.
+     */
+    cn.misakanet.proto.Cmd.Ping getPing();
+
+    /**
+     * <code>.common.Ping ping = 6;</code>
+     */
+    cn.misakanet.proto.Cmd.PingOrBuilder getPingOrBuilder();
+
+    /**
+     * <code>.common.PadType padType = 7;</code>
+     *
+     * @return The enum numeric value on the wire for padType.
+     */
+    int getPadTypeValue();
+
+    /**
+     * <code>.common.PadType padType = 7;</code>
+     *
+     * @return The padType.
+     */
+    cn.misakanet.proto.Cmd.PadType getPadType();
+
+    /**
+     * <code>.common.PadBtnData padData = 8;</code>
+     *
+     * @return Whether the padData field is set.
+     */
+    boolean hasPadData();
+
+    /**
+     * <code>.common.PadBtnData padData = 8;</code>
+     *
+     * @return The padData.
+     */
+    cn.misakanet.proto.Cmd.PadBtnData getPadData();
+
+    /**
+     * <code>.common.PadBtnData padData = 8;</code>
+     */
+    cn.misakanet.proto.Cmd.PadBtnDataOrBuilder getPadDataOrBuilder();
+
+    /**
+     * <code>.common.Disconnect disconnect = 9;</code>
+     *
+     * @return Whether the disconnect field is set.
+     */
+    boolean hasDisconnect();
+
+    /**
+     * <code>.common.Disconnect disconnect = 9;</code>
+     *
+     * @return The disconnect.
+     */
+    cn.misakanet.proto.Cmd.Disconnect getDisconnect();
+
+    /**
+     * <code>.common.Disconnect disconnect = 9;</code>
+     */
+    cn.misakanet.proto.Cmd.DisconnectOrBuilder getDisconnectOrBuilder();
+  }
+
+  public interface DisconnectOrBuilder extends
+          // @@protoc_insertion_point(interface_extends:common.Disconnect)
+          com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string id = 1;</code>
+     *
+     * @return The id.
+     */
+    java.lang.String getId();
+
+    /**
+     * <code>string id = 1;</code>
+     *
+     * @return The bytes for id.
+     */
+    com.google.protobuf.ByteString
+    getIdBytes();
+  }
+
+  private static final com.google.protobuf.Descriptors.Descriptor
+          internal_static_common_Data_descriptor;
+  private static final
+  com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internal_static_common_Data_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+          internal_static_common_Hello_descriptor;
+  private static final
+  com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internal_static_common_Hello_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+          internal_static_common_Ping_descriptor;
+  private static final
+  com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internal_static_common_Ping_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+          internal_static_common_PadBtnData_descriptor;
+  private static final
+  com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internal_static_common_PadBtnData_fieldAccessorTable;
+
+  /**
+   * Protobuf type {@code common.Data}
+   */
+  public static final class Data extends
+          com.google.protobuf.GeneratedMessageV3 implements
+          // @@protoc_insertion_point(message_implements:common.Data)
+          DataOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use Data.newBuilder() to construct.
+    private Data(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private Data() {
+      cmd_ = 0;
+      id_ = "";
+      msgType_ = 0;
+      to_ = "";
+      padType_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+            UnusedPrivateParameter unused) {
+      return new Data();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    public static final int DISCONNECT_FIELD_NUMBER = 9;
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+    getDescriptor() {
+      return cn.misakanet.proto.Cmd.internal_static_common_Data_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    internalGetFieldAccessorTable() {
+      return cn.misakanet.proto.Cmd.internal_static_common_Data_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                      cn.misakanet.proto.Cmd.Data.class, cn.misakanet.proto.Cmd.Data.Builder.class);
+    }
+
+    public static final int CMD_FIELD_NUMBER = 1;
+    private int cmd_;
+
+    /**
+     * <code>.common.CmdType cmd = 1;</code>
+     *
+     * @return The enum numeric value on the wire for cmd.
+     */
+    @java.lang.Override
+    public int getCmdValue() {
+      return cmd_;
+    }
+
+    /**
+     * <code>.common.CmdType cmd = 1;</code>
+     *
+     * @return The cmd.
+     */
+    @java.lang.Override
+    public cn.misakanet.proto.Cmd.CmdType getCmd() {
+      @SuppressWarnings("deprecation")
+      cn.misakanet.proto.Cmd.CmdType result = cn.misakanet.proto.Cmd.CmdType.valueOf(cmd_);
+      return result == null ? cn.misakanet.proto.Cmd.CmdType.UNRECOGNIZED : result;
+    }
+
+    public static final int ID_FIELD_NUMBER = 2;
+    private volatile java.lang.Object id_;
+
+    /**
+     * <code>string id = 2;</code>
+     *
+     * @return The id.
+     */
+    @java.lang.Override
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      }
+    }
+
+    /**
+     * <code>string id = 2;</code>
+     *
+     * @return The bytes for id.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+    getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8(
+                        (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int MSGTYPE_FIELD_NUMBER = 3;
+    private int msgType_;
+
+    /**
+     * <code>.common.MsgType msgType = 3;</code>
+     *
+     * @return The enum numeric value on the wire for msgType.
+     */
+    @java.lang.Override
+    public int getMsgTypeValue() {
+      return msgType_;
+    }
+
+    /**
+     * <code>.common.MsgType msgType = 3;</code>
+     *
+     * @return The msgType.
+     */
+    @java.lang.Override
+    public cn.misakanet.proto.Cmd.MsgType getMsgType() {
+      @SuppressWarnings("deprecation")
+      cn.misakanet.proto.Cmd.MsgType result = cn.misakanet.proto.Cmd.MsgType.valueOf(msgType_);
+      return result == null ? cn.misakanet.proto.Cmd.MsgType.UNRECOGNIZED : result;
+    }
+
+    public static final int TO_FIELD_NUMBER = 4;
+    private volatile java.lang.Object to_;
+
+    /**
+     * <code>string to = 4;</code>
+     *
+     * @return The to.
+     */
+    @java.lang.Override
+    public java.lang.String getTo() {
+      java.lang.Object ref = to_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        to_ = s;
+        return s;
+      }
+    }
+
+    /**
+     * <code>string to = 4;</code>
+     *
+     * @return The bytes for to.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+    getToBytes() {
+      java.lang.Object ref = to_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8(
+                        (java.lang.String) ref);
+        to_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int HELLO_FIELD_NUMBER = 5;
+    private cn.misakanet.proto.Cmd.Hello hello_;
+
+    /**
+     * <code>.common.Hello hello = 5;</code>
+     *
+     * @return Whether the hello field is set.
+     */
+    @java.lang.Override
+    public boolean hasHello() {
+      return hello_ != null;
+    }
+
+    /**
+     * <code>.common.Hello hello = 5;</code>
+     *
+     * @return The hello.
+     */
+    @java.lang.Override
+    public cn.misakanet.proto.Cmd.Hello getHello() {
+      return hello_ == null ? cn.misakanet.proto.Cmd.Hello.getDefaultInstance() : hello_;
+    }
+
+    /**
+     * <code>.common.Hello hello = 5;</code>
+     */
+    @java.lang.Override
+    public cn.misakanet.proto.Cmd.HelloOrBuilder getHelloOrBuilder() {
+      return getHello();
+    }
+
+    public static final int PING_FIELD_NUMBER = 6;
+    private cn.misakanet.proto.Cmd.Ping ping_;
+
+    /**
+     * <code>.common.Ping ping = 6;</code>
+     *
+     * @return Whether the ping field is set.
+     */
+    @java.lang.Override
+    public boolean hasPing() {
+      return ping_ != null;
+    }
+
+    /**
+     * <code>.common.Ping ping = 6;</code>
+     *
+     * @return The ping.
+     */
+    @java.lang.Override
+    public cn.misakanet.proto.Cmd.Ping getPing() {
+      return ping_ == null ? cn.misakanet.proto.Cmd.Ping.getDefaultInstance() : ping_;
+    }
+
+    /**
+     * <code>.common.Ping ping = 6;</code>
+     */
+    @java.lang.Override
+    public cn.misakanet.proto.Cmd.PingOrBuilder getPingOrBuilder() {
+      return getPing();
+    }
+
+    public static final int PADTYPE_FIELD_NUMBER = 7;
+    private int padType_;
+
+    /**
+     * <code>.common.PadType padType = 7;</code>
+     *
+     * @return The enum numeric value on the wire for padType.
+     */
+    @java.lang.Override
+    public int getPadTypeValue() {
+      return padType_;
+    }
+
+    /**
+     * <code>.common.PadType padType = 7;</code>
+     *
+     * @return The padType.
+     */
+    @java.lang.Override
+    public cn.misakanet.proto.Cmd.PadType getPadType() {
+      @SuppressWarnings("deprecation")
+      cn.misakanet.proto.Cmd.PadType result = cn.misakanet.proto.Cmd.PadType.valueOf(padType_);
+      return result == null ? cn.misakanet.proto.Cmd.PadType.UNRECOGNIZED : result;
+    }
+
+    public static final int PADDATA_FIELD_NUMBER = 8;
+    private cn.misakanet.proto.Cmd.PadBtnData padData_;
+
+    /**
+     * <code>.common.PadBtnData padData = 8;</code>
+     *
+     * @return Whether the padData field is set.
+     */
+    @java.lang.Override
+    public boolean hasPadData() {
+      return padData_ != null;
+    }
+
+    /**
+     * <code>.common.PadBtnData padData = 8;</code>
+     *
+     * @return The padData.
+     */
+    @java.lang.Override
+    public cn.misakanet.proto.Cmd.PadBtnData getPadData() {
+      return padData_ == null ? cn.misakanet.proto.Cmd.PadBtnData.getDefaultInstance() : padData_;
+    }
+
+    /**
+     * <code>.common.PadBtnData padData = 8;</code>
+     */
+    @java.lang.Override
+    public cn.misakanet.proto.Cmd.PadBtnDataOrBuilder getPadDataOrBuilder() {
+      return getPadData();
+    }
+
+    private cn.misakanet.proto.Cmd.Disconnect disconnect_;
+
+    private Data(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+              com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              int rawValue = input.readEnum();
+
+              cmd_ = rawValue;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              id_ = s;
+              break;
+            }
+            case 24: {
+              int rawValue = input.readEnum();
+
+              msgType_ = rawValue;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              to_ = s;
+              break;
+            }
+            case 42: {
+              cn.misakanet.proto.Cmd.Hello.Builder subBuilder = null;
+              if (hello_ != null) {
+                subBuilder = hello_.toBuilder();
+              }
+              hello_ = input.readMessage(cn.misakanet.proto.Cmd.Hello.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(hello_);
+                hello_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 50: {
+              cn.misakanet.proto.Cmd.Ping.Builder subBuilder = null;
+              if (ping_ != null) {
+                subBuilder = ping_.toBuilder();
+              }
+              ping_ = input.readMessage(cn.misakanet.proto.Cmd.Ping.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(ping_);
+                ping_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 56: {
+              int rawValue = input.readEnum();
+
+              padType_ = rawValue;
+              break;
+            }
+            case 66: {
+              cn.misakanet.proto.Cmd.PadBtnData.Builder subBuilder = null;
+              if (padData_ != null) {
+                subBuilder = padData_.toBuilder();
+              }
+              padData_ = input.readMessage(cn.misakanet.proto.Cmd.PadBtnData.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(padData_);
+                padData_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 74: {
+              cn.misakanet.proto.Cmd.Disconnect.Builder subBuilder = null;
+              if (disconnect_ != null) {
+                subBuilder = disconnect_.toBuilder();
+              }
+              disconnect_ = input.readMessage(cn.misakanet.proto.Cmd.Disconnect.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(disconnect_);
+                disconnect_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                      input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+                e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    /**
+     * <code>.common.Disconnect disconnect = 9;</code>
+     *
+     * @return Whether the disconnect field is set.
+     */
+    @java.lang.Override
+    public boolean hasDisconnect() {
+      return disconnect_ != null;
+    }
+
+    /**
+     * <code>.common.Disconnect disconnect = 9;</code>
+     *
+     * @return The disconnect.
+     */
+    @java.lang.Override
+    public cn.misakanet.proto.Cmd.Disconnect getDisconnect() {
+      return disconnect_ == null ? cn.misakanet.proto.Cmd.Disconnect.getDefaultInstance() : disconnect_;
+    }
+
+    /**
+     * <code>.common.Disconnect disconnect = 9;</code>
+     */
+    @java.lang.Override
+    public cn.misakanet.proto.Cmd.DisconnectOrBuilder getDisconnectOrBuilder() {
+      return getDisconnect();
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+      if (cmd_ != cn.misakanet.proto.Cmd.CmdType.T_Hello.getNumber()) {
+        output.writeEnum(1, cmd_);
+      }
+      if (!getIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, id_);
+      }
+      if (msgType_ != cn.misakanet.proto.Cmd.MsgType.Server.getNumber()) {
+        output.writeEnum(3, msgType_);
+      }
+      if (!getToBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, to_);
+      }
+      if (hello_ != null) {
+        output.writeMessage(5, getHello());
+      }
+      if (ping_ != null) {
+        output.writeMessage(6, getPing());
+      }
+      if (padType_ != cn.misakanet.proto.Cmd.PadType.DS4.getNumber()) {
+        output.writeEnum(7, padType_);
+      }
+      if (padData_ != null) {
+        output.writeMessage(8, getPadData());
+      }
+      if (disconnect_ != null) {
+        output.writeMessage(9, getDisconnect());
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (cmd_ != cn.misakanet.proto.Cmd.CmdType.T_Hello.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+                .computeEnumSize(1, cmd_);
+      }
+      if (!getIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, id_);
+      }
+      if (msgType_ != cn.misakanet.proto.Cmd.MsgType.Server.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+                .computeEnumSize(3, msgType_);
+      }
+      if (!getToBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, to_);
+      }
+      if (hello_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+                .computeMessageSize(5, getHello());
+      }
+      if (ping_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+                .computeMessageSize(6, getPing());
+      }
+      if (padType_ != cn.misakanet.proto.Cmd.PadType.DS4.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+                .computeEnumSize(7, padType_);
+      }
+      if (padData_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+                .computeMessageSize(8, getPadData());
+      }
+      if (disconnect_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+                .computeMessageSize(9, getDisconnect());
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof cn.misakanet.proto.Cmd.Data)) {
+        return super.equals(obj);
+      }
+      cn.misakanet.proto.Cmd.Data other = (cn.misakanet.proto.Cmd.Data) obj;
+
+      if (cmd_ != other.cmd_) return false;
+      if (!getId()
+              .equals(other.getId())) return false;
+      if (msgType_ != other.msgType_) return false;
+      if (!getTo()
+              .equals(other.getTo())) return false;
+      if (hasHello() != other.hasHello()) return false;
+      if (hasHello()) {
+        if (!getHello()
+                .equals(other.getHello())) return false;
+      }
+      if (hasPing() != other.hasPing()) return false;
+      if (hasPing()) {
+        if (!getPing()
+                .equals(other.getPing())) return false;
+      }
+      if (padType_ != other.padType_) return false;
+      if (hasPadData() != other.hasPadData()) return false;
+      if (hasPadData()) {
+        if (!getPadData()
+                .equals(other.getPadData())) return false;
+      }
+      if (hasDisconnect() != other.hasDisconnect()) return false;
+      if (hasDisconnect()) {
+        if (!getDisconnect()
+                .equals(other.getDisconnect())) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CMD_FIELD_NUMBER;
+      hash = (53 * hash) + cmd_;
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+      hash = (37 * hash) + MSGTYPE_FIELD_NUMBER;
+      hash = (53 * hash) + msgType_;
+      hash = (37 * hash) + TO_FIELD_NUMBER;
+      hash = (53 * hash) + getTo().hashCode();
+      if (hasHello()) {
+        hash = (37 * hash) + HELLO_FIELD_NUMBER;
+        hash = (53 * hash) + getHello().hashCode();
+      }
+      if (hasPing()) {
+        hash = (37 * hash) + PING_FIELD_NUMBER;
+        hash = (53 * hash) + getPing().hashCode();
+      }
+      hash = (37 * hash) + PADTYPE_FIELD_NUMBER;
+      hash = (53 * hash) + padType_;
+      if (hasPadData()) {
+        hash = (37 * hash) + PADDATA_FIELD_NUMBER;
+        hash = (53 * hash) + getPadData().hashCode();
+      }
+      if (hasDisconnect()) {
+        hash = (37 * hash) + DISCONNECT_FIELD_NUMBER;
+        hash = (53 * hash) + getDisconnect().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cn.misakanet.proto.Cmd.Data parseFrom(
+            java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static cn.misakanet.proto.Cmd.Data parseFrom(
+            java.nio.ByteBuffer data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static cn.misakanet.proto.Cmd.Data parseFrom(
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static cn.misakanet.proto.Cmd.Data parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static cn.misakanet.proto.Cmd.Data parseFrom(byte[] data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static cn.misakanet.proto.Cmd.Data parseFrom(
+            byte[] data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static cn.misakanet.proto.Cmd.Data parseFrom(java.io.InputStream input)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+              .parseWithIOException(PARSER, input);
+    }
+
+    public static cn.misakanet.proto.Cmd.Data parseFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+              .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static cn.misakanet.proto.Cmd.Data parseDelimitedFrom(java.io.InputStream input)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+              .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static cn.misakanet.proto.Cmd.Data parseDelimitedFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+              .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static cn.misakanet.proto.Cmd.Data parseFrom(
+            com.google.protobuf.CodedInputStream input)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+              .parseWithIOException(PARSER, input);
+    }
+
+    public static cn.misakanet.proto.Cmd.Data parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+              .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(cn.misakanet.proto.Cmd.Data prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+              ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     * Protobuf type {@code common.Data}
+     */
+    public static final class Builder extends
+            com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+            // @@protoc_insertion_point(builder_implements:common.Data)
+            cn.misakanet.proto.Cmd.DataOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+      getDescriptor() {
+        return cn.misakanet.proto.Cmd.internal_static_common_Data_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internalGetFieldAccessorTable() {
+        return cn.misakanet.proto.Cmd.internal_static_common_Data_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                        cn.misakanet.proto.Cmd.Data.class, cn.misakanet.proto.Cmd.Data.Builder.class);
+      }
+
+      // Construct using cn.misakanet.proto.Cmd.Data.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+              com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+
+      private cn.misakanet.proto.Cmd.Disconnect disconnect_;
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+      getDescriptorForType() {
+        return cn.misakanet.proto.Cmd.internal_static_common_Data_descriptor;
+      }
+
+      @java.lang.Override
+      public cn.misakanet.proto.Cmd.Data getDefaultInstanceForType() {
+        return cn.misakanet.proto.Cmd.Data.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cn.misakanet.proto.Cmd.Data build() {
+        cn.misakanet.proto.Cmd.Data result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              cn.misakanet.proto.Cmd.Disconnect, cn.misakanet.proto.Cmd.Disconnect.Builder, cn.misakanet.proto.Cmd.DisconnectOrBuilder> disconnectBuilder_;
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(
+              com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(
+              com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cn.misakanet.proto.Cmd.Data) {
+          return mergeFrom((cn.misakanet.proto.Cmd.Data) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        cmd_ = 0;
+
+        id_ = "";
+
+        msgType_ = 0;
+
+        to_ = "";
+
+        if (helloBuilder_ == null) {
+          hello_ = null;
+        } else {
+          hello_ = null;
+          helloBuilder_ = null;
+        }
+        if (pingBuilder_ == null) {
+          ping_ = null;
+        } else {
+          ping_ = null;
+          pingBuilder_ = null;
+        }
+        padType_ = 0;
+
+        if (padDataBuilder_ == null) {
+          padData_ = null;
+        } else {
+          padData_ = null;
+          padDataBuilder_ = null;
+        }
+        if (disconnectBuilder_ == null) {
+          disconnect_ = null;
+        } else {
+          disconnect_ = null;
+          disconnectBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        cn.misakanet.proto.Cmd.Data parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cn.misakanet.proto.Cmd.Data) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int cmd_ = 0;
+
+      /**
+       * <code>.common.CmdType cmd = 1;</code>
+       *
+       * @return The enum numeric value on the wire for cmd.
+       */
+      @java.lang.Override
+      public int getCmdValue() {
+        return cmd_;
+      }
+
+      /**
+       * <code>.common.CmdType cmd = 1;</code>
+       *
+       * @param value The enum numeric value on the wire for cmd to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCmdValue(int value) {
+
+        cmd_ = value;
+        onChanged();
+        return this;
+      }
+
+      /**
+       * <code>.common.CmdType cmd = 1;</code>
+       *
+       * @return The cmd.
+       */
+      @java.lang.Override
+      public cn.misakanet.proto.Cmd.CmdType getCmd() {
+        @SuppressWarnings("deprecation")
+        cn.misakanet.proto.Cmd.CmdType result = cn.misakanet.proto.Cmd.CmdType.valueOf(cmd_);
+        return result == null ? cn.misakanet.proto.Cmd.CmdType.UNRECOGNIZED : result;
+      }
+
+      /**
+       * <code>.common.CmdType cmd = 1;</code>
+       *
+       * @param value The cmd to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCmd(cn.misakanet.proto.Cmd.CmdType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        cmd_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       * <code>.common.CmdType cmd = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearCmd() {
+
+        cmd_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object id_ = "";
+
+      /**
+       * <code>string id = 2;</code>
+       *
+       * @return The id.
+       */
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+                  (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          id_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       * <code>string id = 2;</code>
+       *
+       * @return The bytes for id.
+       */
+      public com.google.protobuf.ByteString
+      getIdBytes() {
+        java.lang.Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8(
+                          (java.lang.String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       * <code>string id = 2;</code>
+       *
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(
+              java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        id_ = value;
+        onChanged();
+        return this;
+      }
+
+      /**
+       * <code>string id = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+
+        id_ = getDefaultInstance().getId();
+        onChanged();
+        return this;
+      }
+
+      /**
+       * <code>string id = 2;</code>
+       *
+       * @param value The bytes for id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIdBytes(
+              com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        id_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int msgType_ = 0;
+
+      /**
+       * <code>.common.MsgType msgType = 3;</code>
+       *
+       * @return The enum numeric value on the wire for msgType.
+       */
+      @java.lang.Override
+      public int getMsgTypeValue() {
+        return msgType_;
+      }
+
+      /**
+       * <code>.common.MsgType msgType = 3;</code>
+       *
+       * @param value The enum numeric value on the wire for msgType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMsgTypeValue(int value) {
+
+        msgType_ = value;
+        onChanged();
+        return this;
+      }
+
+      /**
+       * <code>.common.MsgType msgType = 3;</code>
+       *
+       * @return The msgType.
+       */
+      @java.lang.Override
+      public cn.misakanet.proto.Cmd.MsgType getMsgType() {
+        @SuppressWarnings("deprecation")
+        cn.misakanet.proto.Cmd.MsgType result = cn.misakanet.proto.Cmd.MsgType.valueOf(msgType_);
+        return result == null ? cn.misakanet.proto.Cmd.MsgType.UNRECOGNIZED : result;
+      }
+
+      /**
+       * <code>.common.MsgType msgType = 3;</code>
+       *
+       * @param value The msgType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMsgType(cn.misakanet.proto.Cmd.MsgType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        msgType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       * <code>.common.MsgType msgType = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearMsgType() {
+
+        msgType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object to_ = "";
+
+      /**
+       * <code>string to = 4;</code>
+       *
+       * @return The to.
+       */
+      public java.lang.String getTo() {
+        java.lang.Object ref = to_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+                  (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          to_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       * <code>string to = 4;</code>
+       *
+       * @return The bytes for to.
+       */
+      public com.google.protobuf.ByteString
+      getToBytes() {
+        java.lang.Object ref = to_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8(
+                          (java.lang.String) ref);
+          to_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       * <code>string to = 4;</code>
+       *
+       * @param value The to to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTo(
+              java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        to_ = value;
+        onChanged();
+        return this;
+      }
+
+      /**
+       * <code>string to = 4;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearTo() {
+
+        to_ = getDefaultInstance().getTo();
+        onChanged();
+        return this;
+      }
+
+      /**
+       * <code>string to = 4;</code>
+       *
+       * @param value The bytes for to to set.
+       * @return This builder for chaining.
+       */
+      public Builder setToBytes(
+              com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        to_ = value;
+        onChanged();
+        return this;
+      }
+
+      private cn.misakanet.proto.Cmd.Hello hello_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              cn.misakanet.proto.Cmd.Hello, cn.misakanet.proto.Cmd.Hello.Builder, cn.misakanet.proto.Cmd.HelloOrBuilder> helloBuilder_;
+
+      /**
+       * <code>.common.Hello hello = 5;</code>
+       *
+       * @return Whether the hello field is set.
+       */
+      public boolean hasHello() {
+        return helloBuilder_ != null || hello_ != null;
+      }
+
+      /**
+       * <code>.common.Hello hello = 5;</code>
+       *
+       * @return The hello.
+       */
+      public cn.misakanet.proto.Cmd.Hello getHello() {
+        if (helloBuilder_ == null) {
+          return hello_ == null ? cn.misakanet.proto.Cmd.Hello.getDefaultInstance() : hello_;
+        } else {
+          return helloBuilder_.getMessage();
+        }
+      }
+
+      /**
+       * <code>.common.Hello hello = 5;</code>
+       */
+      public Builder setHello(cn.misakanet.proto.Cmd.Hello value) {
+        if (helloBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          hello_ = value;
+          onChanged();
+        } else {
+          helloBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+
+      /**
+       * <code>.common.Hello hello = 5;</code>
+       */
+      public Builder setHello(
+              cn.misakanet.proto.Cmd.Hello.Builder builderForValue) {
+        if (helloBuilder_ == null) {
+          hello_ = builderForValue.build();
+          onChanged();
+        } else {
+          helloBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+
+      /**
+       * <code>.common.Hello hello = 5;</code>
+       */
+      public Builder mergeHello(cn.misakanet.proto.Cmd.Hello value) {
+        if (helloBuilder_ == null) {
+          if (hello_ != null) {
+            hello_ =
+                    cn.misakanet.proto.Cmd.Hello.newBuilder(hello_).mergeFrom(value).buildPartial();
+          } else {
+            hello_ = value;
+          }
+          onChanged();
+        } else {
+          helloBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+
+      /**
+       * <code>.common.Hello hello = 5;</code>
+       */
+      public Builder clearHello() {
+        if (helloBuilder_ == null) {
+          hello_ = null;
+          onChanged();
+        } else {
+          hello_ = null;
+          helloBuilder_ = null;
+        }
+
+        return this;
+      }
+
+      /**
+       * <code>.common.Hello hello = 5;</code>
+       */
+      public cn.misakanet.proto.Cmd.Hello.Builder getHelloBuilder() {
+
+        onChanged();
+        return getHelloFieldBuilder().getBuilder();
+      }
+
+      /**
+       * <code>.common.Hello hello = 5;</code>
+       */
+      public cn.misakanet.proto.Cmd.HelloOrBuilder getHelloOrBuilder() {
+        if (helloBuilder_ != null) {
+          return helloBuilder_.getMessageOrBuilder();
+        } else {
+          return hello_ == null ?
+                  cn.misakanet.proto.Cmd.Hello.getDefaultInstance() : hello_;
+        }
+      }
+
+      /**
+       * <code>.common.Hello hello = 5;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              cn.misakanet.proto.Cmd.Hello, cn.misakanet.proto.Cmd.Hello.Builder, cn.misakanet.proto.Cmd.HelloOrBuilder>
+      getHelloFieldBuilder() {
+        if (helloBuilder_ == null) {
+          helloBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                  cn.misakanet.proto.Cmd.Hello, cn.misakanet.proto.Cmd.Hello.Builder, cn.misakanet.proto.Cmd.HelloOrBuilder>(
+                  getHello(),
+                  getParentForChildren(),
+                  isClean());
+          hello_ = null;
+        }
+        return helloBuilder_;
+      }
+
+      private cn.misakanet.proto.Cmd.Ping ping_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              cn.misakanet.proto.Cmd.Ping, cn.misakanet.proto.Cmd.Ping.Builder, cn.misakanet.proto.Cmd.PingOrBuilder> pingBuilder_;
+
+      /**
+       * <code>.common.Ping ping = 6;</code>
+       *
+       * @return Whether the ping field is set.
+       */
+      public boolean hasPing() {
+        return pingBuilder_ != null || ping_ != null;
+      }
+
+      /**
+       * <code>.common.Ping ping = 6;</code>
+       *
+       * @return The ping.
+       */
+      public cn.misakanet.proto.Cmd.Ping getPing() {
+        if (pingBuilder_ == null) {
+          return ping_ == null ? cn.misakanet.proto.Cmd.Ping.getDefaultInstance() : ping_;
+        } else {
+          return pingBuilder_.getMessage();
+        }
+      }
+
+      /**
+       * <code>.common.Ping ping = 6;</code>
+       */
+      public Builder setPing(cn.misakanet.proto.Cmd.Ping value) {
+        if (pingBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ping_ = value;
+          onChanged();
+        } else {
+          pingBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+
+      /**
+       * <code>.common.Ping ping = 6;</code>
+       */
+      public Builder setPing(
+              cn.misakanet.proto.Cmd.Ping.Builder builderForValue) {
+        if (pingBuilder_ == null) {
+          ping_ = builderForValue.build();
+          onChanged();
+        } else {
+          pingBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+
+      /**
+       * <code>.common.Ping ping = 6;</code>
+       */
+      public Builder mergePing(cn.misakanet.proto.Cmd.Ping value) {
+        if (pingBuilder_ == null) {
+          if (ping_ != null) {
+            ping_ =
+                    cn.misakanet.proto.Cmd.Ping.newBuilder(ping_).mergeFrom(value).buildPartial();
+          } else {
+            ping_ = value;
+          }
+          onChanged();
+        } else {
+          pingBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+
+      /**
+       * <code>.common.Ping ping = 6;</code>
+       */
+      public Builder clearPing() {
+        if (pingBuilder_ == null) {
+          ping_ = null;
+          onChanged();
+        } else {
+          ping_ = null;
+          pingBuilder_ = null;
+        }
+
+        return this;
+      }
+
+      /**
+       * <code>.common.Ping ping = 6;</code>
+       */
+      public cn.misakanet.proto.Cmd.Ping.Builder getPingBuilder() {
+
+        onChanged();
+        return getPingFieldBuilder().getBuilder();
+      }
+
+      /**
+       * <code>.common.Ping ping = 6;</code>
+       */
+      public cn.misakanet.proto.Cmd.PingOrBuilder getPingOrBuilder() {
+        if (pingBuilder_ != null) {
+          return pingBuilder_.getMessageOrBuilder();
+        } else {
+          return ping_ == null ?
+                  cn.misakanet.proto.Cmd.Ping.getDefaultInstance() : ping_;
+        }
+      }
+
+      /**
+       * <code>.common.Ping ping = 6;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              cn.misakanet.proto.Cmd.Ping, cn.misakanet.proto.Cmd.Ping.Builder, cn.misakanet.proto.Cmd.PingOrBuilder>
+      getPingFieldBuilder() {
+        if (pingBuilder_ == null) {
+          pingBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                  cn.misakanet.proto.Cmd.Ping, cn.misakanet.proto.Cmd.Ping.Builder, cn.misakanet.proto.Cmd.PingOrBuilder>(
+                  getPing(),
+                  getParentForChildren(),
+                  isClean());
+          ping_ = null;
+        }
+        return pingBuilder_;
+      }
+
+      private int padType_ = 0;
+
+      /**
+       * <code>.common.PadType padType = 7;</code>
+       *
+       * @return The enum numeric value on the wire for padType.
+       */
+      @java.lang.Override
+      public int getPadTypeValue() {
+        return padType_;
+      }
+
+      /**
+       * <code>.common.PadType padType = 7;</code>
+       *
+       * @param value The enum numeric value on the wire for padType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPadTypeValue(int value) {
+
+        padType_ = value;
+        onChanged();
+        return this;
+      }
+
+      /**
+       * <code>.common.PadType padType = 7;</code>
+       *
+       * @return The padType.
+       */
+      @java.lang.Override
+      public cn.misakanet.proto.Cmd.PadType getPadType() {
+        @SuppressWarnings("deprecation")
+        cn.misakanet.proto.Cmd.PadType result = cn.misakanet.proto.Cmd.PadType.valueOf(padType_);
+        return result == null ? cn.misakanet.proto.Cmd.PadType.UNRECOGNIZED : result;
+      }
+
+      /**
+       * <code>.common.PadType padType = 7;</code>
+       *
+       * @param value The padType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPadType(cn.misakanet.proto.Cmd.PadType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        padType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       * <code>.common.PadType padType = 7;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPadType() {
+
+        padType_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private cn.misakanet.proto.Cmd.PadBtnData padData_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              cn.misakanet.proto.Cmd.PadBtnData, cn.misakanet.proto.Cmd.PadBtnData.Builder, cn.misakanet.proto.Cmd.PadBtnDataOrBuilder> padDataBuilder_;
+
+      /**
+       * <code>.common.PadBtnData padData = 8;</code>
+       *
+       * @return Whether the padData field is set.
+       */
+      public boolean hasPadData() {
+        return padDataBuilder_ != null || padData_ != null;
+      }
+
+      /**
+       * <code>.common.PadBtnData padData = 8;</code>
+       *
+       * @return The padData.
+       */
+      public cn.misakanet.proto.Cmd.PadBtnData getPadData() {
+        if (padDataBuilder_ == null) {
+          return padData_ == null ? cn.misakanet.proto.Cmd.PadBtnData.getDefaultInstance() : padData_;
+        } else {
+          return padDataBuilder_.getMessage();
+        }
+      }
+
+      /**
+       * <code>.common.PadBtnData padData = 8;</code>
+       */
+      public Builder setPadData(cn.misakanet.proto.Cmd.PadBtnData value) {
+        if (padDataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          padData_ = value;
+          onChanged();
+        } else {
+          padDataBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+
+      /**
+       * <code>.common.PadBtnData padData = 8;</code>
+       */
+      public Builder setPadData(
+              cn.misakanet.proto.Cmd.PadBtnData.Builder builderForValue) {
+        if (padDataBuilder_ == null) {
+          padData_ = builderForValue.build();
+          onChanged();
+        } else {
+          padDataBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+
+      /**
+       * <code>.common.PadBtnData padData = 8;</code>
+       */
+      public Builder mergePadData(cn.misakanet.proto.Cmd.PadBtnData value) {
+        if (padDataBuilder_ == null) {
+          if (padData_ != null) {
+            padData_ =
+                    cn.misakanet.proto.Cmd.PadBtnData.newBuilder(padData_).mergeFrom(value).buildPartial();
+          } else {
+            padData_ = value;
+          }
+          onChanged();
+        } else {
+          padDataBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+
+      /**
+       * <code>.common.PadBtnData padData = 8;</code>
+       */
+      public Builder clearPadData() {
+        if (padDataBuilder_ == null) {
+          padData_ = null;
+          onChanged();
+        } else {
+          padData_ = null;
+          padDataBuilder_ = null;
+        }
+
+        return this;
+      }
+
+      /**
+       * <code>.common.PadBtnData padData = 8;</code>
+       */
+      public cn.misakanet.proto.Cmd.PadBtnData.Builder getPadDataBuilder() {
+
+        onChanged();
+        return getPadDataFieldBuilder().getBuilder();
+      }
+
+      /**
+       * <code>.common.PadBtnData padData = 8;</code>
+       */
+      public cn.misakanet.proto.Cmd.PadBtnDataOrBuilder getPadDataOrBuilder() {
+        if (padDataBuilder_ != null) {
+          return padDataBuilder_.getMessageOrBuilder();
+        } else {
+          return padData_ == null ?
+                  cn.misakanet.proto.Cmd.PadBtnData.getDefaultInstance() : padData_;
+        }
+      }
+
+      /**
+       * <code>.common.PadBtnData padData = 8;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              cn.misakanet.proto.Cmd.PadBtnData, cn.misakanet.proto.Cmd.PadBtnData.Builder, cn.misakanet.proto.Cmd.PadBtnDataOrBuilder>
+      getPadDataFieldBuilder() {
+        if (padDataBuilder_ == null) {
+          padDataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                  cn.misakanet.proto.Cmd.PadBtnData, cn.misakanet.proto.Cmd.PadBtnData.Builder, cn.misakanet.proto.Cmd.PadBtnDataOrBuilder>(
+                  getPadData(),
+                  getParentForChildren(),
+                  isClean());
+          padData_ = null;
+        }
+        return padDataBuilder_;
+      }
+
+      @java.lang.Override
+      public cn.misakanet.proto.Cmd.Data buildPartial() {
+        cn.misakanet.proto.Cmd.Data result = new cn.misakanet.proto.Cmd.Data(this);
+        result.cmd_ = cmd_;
+        result.id_ = id_;
+        result.msgType_ = msgType_;
+        result.to_ = to_;
+        if (helloBuilder_ == null) {
+          result.hello_ = hello_;
+        } else {
+          result.hello_ = helloBuilder_.build();
+        }
+        if (pingBuilder_ == null) {
+          result.ping_ = ping_;
+        } else {
+          result.ping_ = pingBuilder_.build();
+        }
+        result.padType_ = padType_;
+        if (padDataBuilder_ == null) {
+          result.padData_ = padData_;
+        } else {
+          result.padData_ = padDataBuilder_.build();
+        }
+        if (disconnectBuilder_ == null) {
+          result.disconnect_ = disconnect_;
+        } else {
+          result.disconnect_ = disconnectBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(cn.misakanet.proto.Cmd.Data other) {
+        if (other == cn.misakanet.proto.Cmd.Data.getDefaultInstance()) return this;
+        if (other.cmd_ != 0) {
+          setCmdValue(other.getCmdValue());
+        }
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
+          onChanged();
+        }
+        if (other.msgType_ != 0) {
+          setMsgTypeValue(other.getMsgTypeValue());
+        }
+        if (!other.getTo().isEmpty()) {
+          to_ = other.to_;
+          onChanged();
+        }
+        if (other.hasHello()) {
+          mergeHello(other.getHello());
+        }
+        if (other.hasPing()) {
+          mergePing(other.getPing());
+        }
+        if (other.padType_ != 0) {
+          setPadTypeValue(other.getPadTypeValue());
+        }
+        if (other.hasPadData()) {
+          mergePadData(other.getPadData());
+        }
+        if (other.hasDisconnect()) {
+          mergeDisconnect(other.getDisconnect());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      /**
+       * <code>.common.Disconnect disconnect = 9;</code>
+       *
+       * @return Whether the disconnect field is set.
+       */
+      public boolean hasDisconnect() {
+        return disconnectBuilder_ != null || disconnect_ != null;
+      }
+
+      /**
+       * <code>.common.Disconnect disconnect = 9;</code>
+       *
+       * @return The disconnect.
+       */
+      public cn.misakanet.proto.Cmd.Disconnect getDisconnect() {
+        if (disconnectBuilder_ == null) {
+          return disconnect_ == null ? cn.misakanet.proto.Cmd.Disconnect.getDefaultInstance() : disconnect_;
+        } else {
+          return disconnectBuilder_.getMessage();
+        }
+      }
+
+      /**
+       * <code>.common.Disconnect disconnect = 9;</code>
+       */
+      public Builder setDisconnect(cn.misakanet.proto.Cmd.Disconnect value) {
+        if (disconnectBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          disconnect_ = value;
+          onChanged();
+        } else {
+          disconnectBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+
+      /**
+       * <code>.common.Disconnect disconnect = 9;</code>
+       */
+      public Builder setDisconnect(
+              cn.misakanet.proto.Cmd.Disconnect.Builder builderForValue) {
+        if (disconnectBuilder_ == null) {
+          disconnect_ = builderForValue.build();
+          onChanged();
+        } else {
+          disconnectBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+
+      /**
+       * <code>.common.Disconnect disconnect = 9;</code>
+       */
+      public Builder mergeDisconnect(cn.misakanet.proto.Cmd.Disconnect value) {
+        if (disconnectBuilder_ == null) {
+          if (disconnect_ != null) {
+            disconnect_ =
+                    cn.misakanet.proto.Cmd.Disconnect.newBuilder(disconnect_).mergeFrom(value).buildPartial();
+          } else {
+            disconnect_ = value;
+          }
+          onChanged();
+        } else {
+          disconnectBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+
+      /**
+       * <code>.common.Disconnect disconnect = 9;</code>
+       */
+      public Builder clearDisconnect() {
+        if (disconnectBuilder_ == null) {
+          disconnect_ = null;
+          onChanged();
+        } else {
+          disconnect_ = null;
+          disconnectBuilder_ = null;
+        }
+
+        return this;
+      }
+
+      /**
+       * <code>.common.Disconnect disconnect = 9;</code>
+       */
+      public cn.misakanet.proto.Cmd.Disconnect.Builder getDisconnectBuilder() {
+
+        onChanged();
+        return getDisconnectFieldBuilder().getBuilder();
+      }
+
+      /**
+       * <code>.common.Disconnect disconnect = 9;</code>
+       */
+      public cn.misakanet.proto.Cmd.DisconnectOrBuilder getDisconnectOrBuilder() {
+        if (disconnectBuilder_ != null) {
+          return disconnectBuilder_.getMessageOrBuilder();
+        } else {
+          return disconnect_ == null ?
+                  cn.misakanet.proto.Cmd.Disconnect.getDefaultInstance() : disconnect_;
+        }
+      }
+
+      /**
+       * <code>.common.Disconnect disconnect = 9;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              cn.misakanet.proto.Cmd.Disconnect, cn.misakanet.proto.Cmd.Disconnect.Builder, cn.misakanet.proto.Cmd.DisconnectOrBuilder>
+      getDisconnectFieldBuilder() {
+        if (disconnectBuilder_ == null) {
+          disconnectBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+                  cn.misakanet.proto.Cmd.Disconnect, cn.misakanet.proto.Cmd.Disconnect.Builder, cn.misakanet.proto.Cmd.DisconnectOrBuilder>(
+                  getDisconnect(),
+                  getParentForChildren(),
+                  isClean());
+          disconnect_ = null;
+        }
+        return disconnectBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:common.Data)
+    }
+
+    // @@protoc_insertion_point(class_scope:common.Data)
+    private static final cn.misakanet.proto.Cmd.Data DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new cn.misakanet.proto.Cmd.Data();
+    }
+
+    public static cn.misakanet.proto.Cmd.Data getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Data>
+            PARSER = new com.google.protobuf.AbstractParser<Data>() {
+      @java.lang.Override
+      public Data parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Data(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Data> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Data> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cn.misakanet.proto.Cmd.Data getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   /**
    * Protobuf type {@code common.PadBtnData}
    */
   public static final class PadBtnData extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:common.PadBtnData)
-      PadBtnDataOrBuilder {
-  private static final long serialVersionUID = 0L;
+          com.google.protobuf.GeneratedMessageV3 implements
+          // @@protoc_insertion_point(message_implements:common.PadBtnData)
+          PadBtnDataOrBuilder {
+    private static final long serialVersionUID = 0L;
+
     // Use PadBtnData.newBuilder() to construct.
     private PadBtnData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -4501,7 +5049,7 @@ public final class Cmd {
        * @return This builder for chaining.
        */
       public Builder setBtnTypeValue(int value) {
-        
+
         btnType_ = value;
         onChanged();
         return this;
@@ -4525,61 +5073,70 @@ public final class Cmd {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+
         btnType_ = value.getNumber();
         onChanged();
         return this;
       }
+
       /**
        * <code>.common.PadBtn btnType = 1;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearBtnType() {
-        
+
         btnType_ = 0;
         onChanged();
         return this;
       }
 
-      private int btnVal_ ;
+      private int btnVal_;
+
       /**
        * <code>int32 btnVal = 2;</code>
+       *
        * @return The btnVal.
        */
       @java.lang.Override
       public int getBtnVal() {
         return btnVal_;
       }
+
       /**
        * <code>int32 btnVal = 2;</code>
+       *
        * @param value The btnVal to set.
        * @return This builder for chaining.
        */
       public Builder setBtnVal(int value) {
-        
+
         btnVal_ = value;
         onChanged();
         return this;
       }
+
       /**
        * <code>int32 btnVal = 2;</code>
+       *
        * @return This builder for chaining.
        */
       public Builder clearBtnVal() {
-        
+
         btnVal_ = 0;
         onChanged();
         return this;
       }
+
       @java.lang.Override
       public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFields(unknownFields);
       }
 
       @java.lang.Override
       public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
 
@@ -4589,6 +5146,7 @@ public final class Cmd {
 
     // @@protoc_insertion_point(class_scope:common.PadBtnData)
     private static final cn.misakanet.proto.Cmd.PadBtnData DEFAULT_INSTANCE;
+
     static {
       DEFAULT_INSTANCE = new cn.misakanet.proto.Cmd.PadBtnData();
     }
@@ -4598,12 +5156,12 @@ public final class Cmd {
     }
 
     private static final com.google.protobuf.Parser<PadBtnData>
-        PARSER = new com.google.protobuf.AbstractParser<PadBtnData>() {
+            PARSER = new com.google.protobuf.AbstractParser<PadBtnData>() {
       @java.lang.Override
       public PadBtnData parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
         return new PadBtnData(input, extensionRegistry);
       }
     };
@@ -4624,86 +5182,600 @@ public final class Cmd {
 
   }
 
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_common_Data_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_common_Data_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_common_Hello_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_common_Hello_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_common_Ping_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_common_Ping_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_common_PadBtnData_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_common_PadBtnData_fieldAccessorTable;
-
   public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
+  getDescriptor() {
     return descriptor;
   }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
-  static {
-    java.lang.String[] descriptorData = {
-      "\n\017proto/cmd.proto\022\006common\"\337\001\n\004Data\022\034\n\003cm" +
-      "d\030\001 \001(\0162\017.common.CmdType\022\n\n\002id\030\002 \001(\t\022 \n\007" +
-      "msgType\030\003 \001(\0162\017.common.MsgType\022\n\n\002to\030\004 \001" +
-      "(\t\022\034\n\005hello\030\005 \001(\0132\r.common.Hello\022\032\n\004ping" +
-      "\030\006 \001(\0132\014.common.Ping\022 \n\007padType\030\007 \001(\0162\017." +
-      "common.PadType\022#\n\007padData\030\010 \001(\0132\022.common" +
-      ".PadBtnData\"_\n\005Hello\022\r\n\005group\030\001 \001(\t\022\n\n\002i" +
-      "d\030\002 \001(\t\022\014\n\004name\030\003 \001(\t\022\013\n\003msg\030\004 \001(\t\022\021\n\tse" +
-      "rverMsg\030\005 \001(\t\022\r\n\005order\030\006 \001(\010\"\024\n\004Ping\022\014\n\004" +
-      "time\030\001 \001(\003\"=\n\nPadBtnData\022\037\n\007btnType\030\001 \001(" +
-      "\0162\016.common.PadBtn\022\016\n\006btnVal\030\002 \001(\005*B\n\007Cmd" +
-      "Type\022\013\n\007T_Hello\020\000\022\n\n\006T_Ping\020\001\022\016\n\nT_Pad_T" +
-      "ype\020\002\022\016\n\nT_Pad_Data\020\003**\n\007MsgType\022\n\n\006Serv" +
-      "er\020\000\022\n\n\006Driver\020\001\022\007\n\003Pad\020\002*\037\n\007PadType\022\007\n\003" +
-      "DS4\020\000\022\013\n\007Xbox360\020\001*\325\001\n\006PadBtn\022\005\n\001A\020\000\022\005\n\001" +
-      "B\020\001\022\005\n\001Y\020\002\022\005\n\001X\020\003\022\006\n\002LB\020\004\022\006\n\002RB\020\005\022\006\n\002L3\020" +
-      "\006\022\006\n\002R3\020\007\022\t\n\005Start\020\010\022\n\n\006Select\020\t\022\010\n\004Xbox" +
-      "\020\n\022\006\n\002L2\020\013\022\006\n\002R2\020\014\022\007\n\003LAX\020\r\022\007\n\003LAY\020\016\022\007\n\003" +
-      "RAX\020\017\022\007\n\003RAY\020\020\022\007\n\003DUP\020\021\022\t\n\005DDOWN\020\022\022\t\n\005DL" +
-      "EFT\020\023\022\n\n\006DRIGHT\020\024\022\017\n\013DS4TouchPad\020\025B/\n\022cn" +
-      ".misakanet.protoZ\007common/\252\002\017RemotePadDri" +
-      "verb\006proto3"
+
+  private static com.google.protobuf.Descriptors.FileDescriptor
+          descriptor;
+
+  /**
+   * Protobuf type {@code common.Disconnect}
+   */
+  public static final class Disconnect extends
+          com.google.protobuf.GeneratedMessageV3 implements
+          // @@protoc_insertion_point(message_implements:common.Disconnect)
+          DisconnectOrBuilder {
+    public static final int ID_FIELD_NUMBER = 1;
+    private static final long serialVersionUID = 0L;
+    // @@protoc_insertion_point(class_scope:common.Disconnect)
+    private static final cn.misakanet.proto.Cmd.Disconnect DEFAULT_INSTANCE;
+    private static final com.google.protobuf.Parser<Disconnect>
+            PARSER = new com.google.protobuf.AbstractParser<Disconnect>() {
+      @java.lang.Override
+      public Disconnect parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Disconnect(input, extensionRegistry);
+      }
     };
-    descriptor = com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
-        new com.google.protobuf.Descriptors.FileDescriptor[] {
-        });
-    internal_static_common_Data_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_common_Data_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_common_Data_descriptor,
-        new java.lang.String[] { "Cmd", "Id", "MsgType", "To", "Hello", "Ping", "PadType", "PadData", });
-    internal_static_common_Hello_descriptor =
-      getDescriptor().getMessageTypes().get(1);
-    internal_static_common_Hello_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_common_Hello_descriptor,
-        new java.lang.String[] { "Group", "Id", "Name", "Msg", "ServerMsg", "Order", });
-    internal_static_common_Ping_descriptor =
-      getDescriptor().getMessageTypes().get(2);
-    internal_static_common_Ping_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_common_Ping_descriptor,
-        new java.lang.String[] { "Time", });
-    internal_static_common_PadBtnData_descriptor =
-      getDescriptor().getMessageTypes().get(3);
-    internal_static_common_PadBtnData_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_common_PadBtnData_descriptor,
-        new java.lang.String[] { "BtnType", "BtnVal", });
+
+    static {
+      DEFAULT_INSTANCE = new cn.misakanet.proto.Cmd.Disconnect();
+    }
+
+    private volatile java.lang.Object id_;
+    private byte memoizedIsInitialized = -1;
+
+    // Use Disconnect.newBuilder() to construct.
+    private Disconnect(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private Disconnect() {
+      id_ = "";
+    }
+
+    private Disconnect(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+              com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              id_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                      input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+                e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+    getDescriptor() {
+      return cn.misakanet.proto.Cmd.internal_static_common_Disconnect_descriptor;
+    }
+
+    public static cn.misakanet.proto.Cmd.Disconnect parseFrom(
+            java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static cn.misakanet.proto.Cmd.Disconnect parseFrom(
+            java.nio.ByteBuffer data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static cn.misakanet.proto.Cmd.Disconnect parseFrom(
+            com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static cn.misakanet.proto.Cmd.Disconnect parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static cn.misakanet.proto.Cmd.Disconnect parseFrom(byte[] data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static cn.misakanet.proto.Cmd.Disconnect parseFrom(
+            byte[] data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static cn.misakanet.proto.Cmd.Disconnect parseFrom(java.io.InputStream input)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+              .parseWithIOException(PARSER, input);
+    }
+
+    public static cn.misakanet.proto.Cmd.Disconnect parseFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+              .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static cn.misakanet.proto.Cmd.Disconnect parseDelimitedFrom(java.io.InputStream input)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+              .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static cn.misakanet.proto.Cmd.Disconnect parseDelimitedFrom(
+            java.io.InputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+              .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static cn.misakanet.proto.Cmd.Disconnect parseFrom(
+            com.google.protobuf.CodedInputStream input)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+              .parseWithIOException(PARSER, input);
+    }
+
+    public static cn.misakanet.proto.Cmd.Disconnect parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+              .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(cn.misakanet.proto.Cmd.Disconnect prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    public static cn.misakanet.proto.Cmd.Disconnect getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    public static com.google.protobuf.Parser<Disconnect> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+            UnusedPrivateParameter unused) {
+      return new Disconnect();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+    internalGetFieldAccessorTable() {
+      return cn.misakanet.proto.Cmd.internal_static_common_Disconnect_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                      cn.misakanet.proto.Cmd.Disconnect.class, cn.misakanet.proto.Cmd.Disconnect.Builder.class);
+    }
+
+    /**
+     * <code>string id = 1;</code>
+     * @return The id.
+     */
+    @java.lang.Override
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs =
+                (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      }
+    }
+
+    /**
+     * <code>string id = 1;</code>
+     * @return The bytes for id.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+    getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8(
+                        (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+      if (!getIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof cn.misakanet.proto.Cmd.Disconnect)) {
+        return super.equals(obj);
+      }
+      cn.misakanet.proto.Cmd.Disconnect other = (cn.misakanet.proto.Cmd.Disconnect) obj;
+
+      if (!getId()
+              .equals(other.getId())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+              ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Disconnect> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cn.misakanet.proto.Cmd.Disconnect getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+    /**
+     * Protobuf type {@code common.Disconnect}
+     */
+    public static final class Builder extends
+            com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+            // @@protoc_insertion_point(builder_implements:common.Disconnect)
+            cn.misakanet.proto.Cmd.DisconnectOrBuilder {
+      private java.lang.Object id_ = "";
+
+      // Construct using cn.misakanet.proto.Cmd.Disconnect.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+              com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor
+      getDescriptor() {
+        return cn.misakanet.proto.Cmd.internal_static_common_Disconnect_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internalGetFieldAccessorTable() {
+        return cn.misakanet.proto.Cmd.internal_static_common_Disconnect_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                        cn.misakanet.proto.Cmd.Disconnect.class, cn.misakanet.proto.Cmd.Disconnect.Builder.class);
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        id_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+      getDescriptorForType() {
+        return cn.misakanet.proto.Cmd.internal_static_common_Disconnect_descriptor;
+      }
+
+      @java.lang.Override
+      public cn.misakanet.proto.Cmd.Disconnect getDefaultInstanceForType() {
+        return cn.misakanet.proto.Cmd.Disconnect.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cn.misakanet.proto.Cmd.Disconnect build() {
+        cn.misakanet.proto.Cmd.Disconnect result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cn.misakanet.proto.Cmd.Disconnect buildPartial() {
+        cn.misakanet.proto.Cmd.Disconnect result = new cn.misakanet.proto.Cmd.Disconnect(this);
+        result.id_ = id_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(
+              com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(
+              com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cn.misakanet.proto.Cmd.Disconnect) {
+          return mergeFrom((cn.misakanet.proto.Cmd.Disconnect) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cn.misakanet.proto.Cmd.Disconnect other) {
+        if (other == cn.misakanet.proto.Cmd.Disconnect.getDefaultInstance()) return this;
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        cn.misakanet.proto.Cmd.Disconnect parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (cn.misakanet.proto.Cmd.Disconnect) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      /**
+       * <code>string id = 1;</code>
+       * @return The id.
+       */
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+                  (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          id_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       * <code>string id = 1;</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(
+              java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        id_ = value;
+        onChanged();
+        return this;
+      }
+
+      /**
+       * <code>string id = 1;</code>
+       * @return The bytes for id.
+       */
+      public com.google.protobuf.ByteString
+      getIdBytes() {
+        java.lang.Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8(
+                          (java.lang.String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       * <code>string id = 1;</code>
+       * @param value The bytes for id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIdBytes(
+              com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        id_ = value;
+        onChanged();
+        return this;
+      }
+
+      /**
+       * <code>string id = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+
+        id_ = getDefaultInstance().getId();
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:common.Disconnect)
+    }
+
   }
 
   // @@protoc_insertion_point(outer_class_scope)

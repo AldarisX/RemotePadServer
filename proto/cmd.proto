@@ -9,6 +9,7 @@ enum CmdType {
   T_Ping     = 1;
   T_Pad_Type = 2;
   T_Pad_Data = 3;
+  T_DISCONNECT = 4;
 }
 
 enum MsgType {
@@ -18,14 +19,15 @@ enum MsgType {
 }
 
 message Data {
-  CmdType    cmd     = 1;
-  string     id      = 2;
+  CmdType    cmd = 1;
+  string id = 2;
   MsgType    msgType = 3;
-  string     to      = 4;
-  Hello      hello   = 5;
+  string to = 4;
+  Hello      hello = 5;
   Ping       ping    = 6;
   PadType    padType = 7;
   PadBtnData padData = 8;
+  Disconnect disconnect = 9;
 }
 
 message Hello {
@@ -34,7 +36,7 @@ message Hello {
   string name      = 3;
   string msg       = 4;
   string serverMsg = 5;
-  bool   order     = 6;
+  bool order = 6;
 }
 
 message Ping {
@@ -65,13 +67,17 @@ enum PadBtn {
   RAX         = 15;
   RAY         = 16;
   DUP         = 17;
-  DDOWN       = 18;
-  DLEFT       = 19;
-  DRIGHT      = 20;
+  DDOWN = 18;
+  DLEFT = 19;
+  DRIGHT = 20;
   DS4TouchPad = 21;
 }
 
 message PadBtnData {
   PadBtn btnType = 1;
-  int32  btnVal  = 2;
+  int32  btnVal = 2;
+}
+
+message Disconnect {
+  string id = 1;
 }

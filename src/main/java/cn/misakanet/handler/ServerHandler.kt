@@ -1,9 +1,6 @@
 package cn.misakanet.handler
 
-import cn.misakanet.handler.pkg.DefaultHandler
-import cn.misakanet.handler.pkg.HelloHandler
-import cn.misakanet.handler.pkg.PadTypeHandler
-import cn.misakanet.handler.pkg.PingHandler
+import cn.misakanet.handler.pkg.*
 import cn.misakanet.proto.Cmd
 import cn.misakanet.util.ConnGroup
 import io.netty.channel.ChannelHandlerContext
@@ -31,6 +28,9 @@ class ServerHandler : ChannelInboundHandlerAdapter() {
             }
             Cmd.CmdType.T_Pad_Type -> {
                 PadTypeHandler.handler(ctx, protoData)
+            }
+            Cmd.CmdType.T_DISCONNECT -> {
+                DisconnectHandler.handler(ctx, protoData)
             }
             else -> {
                 DefaultHandler.handler(ctx, protoData)

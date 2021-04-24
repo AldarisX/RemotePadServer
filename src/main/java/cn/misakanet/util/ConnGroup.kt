@@ -4,8 +4,12 @@ import cn.misakanet.bean.ConnObj
 import cn.misakanet.proto.Cmd
 import io.netty.channel.Channel
 import io.netty.channel.ChannelHandlerContext
+import org.slf4j.Logger
+import org.slf4j.LoggerFactory
 
 object ConnGroup {
+    val logger: Logger = LoggerFactory.getLogger(ConnGroup::class.java)
+
     val connList = HashMap<String, ConnObj>()
     val padList = HashMap<String, ConnObj>()
     val driverList = HashMap<String, ConnObj>()
@@ -32,6 +36,7 @@ object ConnGroup {
     fun remove(id: String, list: HashMap<String, ConnObj>) {
         list.forEach { (cid, connObj) ->
             if (id == cid) {
+                logger.info("remove $cid")
                 connObj.channel!!.close()
             }
         }
@@ -51,7 +56,6 @@ object ConnGroup {
         connList.forEach { (_, connObj) ->
             if (ch == connObj.channel) {
                 remove(connObj.id!!)
-                return
             }
         }
     }
